@@ -11602,3 +11602,24 @@ footer .btn {
   width: 150px;
   height: 50px;
 }
+
+.spacing {
+    padding-bottom: 3%;
+}
+
+.tablecenter th {
+    color: purple;
+}
+
+.tablecenter td, th {
+    text-align: center;
+}
+
+.tablecenter img {
+    width: 30px;
+    height: 30px;
+}
+
+.spacing-top {
+    padding-bottom: 3%;
+}
