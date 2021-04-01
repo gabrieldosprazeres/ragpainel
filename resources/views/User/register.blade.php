@@ -91,7 +91,7 @@
                                             </span>
                                         <div class="form-group label-floating">
                                             <label class="control-label">Login</label>
-                                            <input type="text" name="login" minlength="4" maxlength="10" class="form-control" required>
+                                            <input type="text" name="userid" minlength="4" maxlength="10" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="input-group">

@@ -73,7 +73,7 @@
                 </li>
                 <li>
                     <a data-toggle="collapse" href="#pagesExamples">
-                        <i class="material-icons">image</i>
+                        <i class="material-icons">security</i>
                         <p>Administração
                             <b class="caret"></b>
                         </p>
@@ -95,125 +95,105 @@
                             <li>
                                 <a href="pages/lock.html">Gerenciar Punições</a>
                             </li>
+                            <li>
+                                <a href="pages/lock.html">Gerenciar Itens</a>
+                            </li>
+                            <li>
+                                <a href="pages/lock.html">Gerenciar Monstros</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <a data-toggle="collapse" href="#componentsExamples">
-                        <i class="material-icons">apps</i>
-                        <p>Components
+                        <i class="material-icons">emoji_events</i>
+                        <p>Rankings
                             <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="componentsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="components/buttons.html">Buttons</a>
+                                <a href="components/buttons.html">Ranking de WOE</a>
                             </li>
                             <li>
-                                <a href="components/grid.html">Grid System</a>
+                                <a href="components/grid.html">Ranking de MVP</a>
                             </li>
                             <li>
-                                <a href="components/panels.html">Panels</a>
+                                <a href="components/panels.html">Ranking de Zeny's</a>
                             </li>
                             <li>
-                                <a href="components/sweet-alert.html">Sweet Alert</a>
+                                <a href="components/sweet-alert.html">Ranking de PVP</a>
                             </li>
                             <li>
-                                <a href="components/notifications.html">Notifications</a>
-                            </li>
-                            <li>
-                                <a href="components/icons.html">Icons</a>
-                            </li>
-                            <li>
-                                <a href="components/typography.html">Typography</a>
+                                <a href="components/notifications.html">Ranking de Eventos</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <a data-toggle="collapse" href="#formsExamples">
-                        <i class="material-icons">content_paste</i>
-                        <p>Forms
+                        <i class="material-icons">dns</i>
+                        <p>Database
                             <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="formsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="forms/regular.html">Regular Forms</a>
+                                <a href="forms/regular.html">Itens</a>
                             </li>
                             <li>
-                                <a href="forms/extended.html">Extended Forms</a>
-                            </li>
-                            <li>
-                                <a href="forms/validation.html">Validation Forms</a>
-                            </li>
-                            <li>
-                                <a href="forms/wizard.html">Wizard</a>
+                                <a href="forms/extended.html">Monstros</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a data-toggle="collapse" href="#tablesExamples">
-                        <i class="material-icons">grid_on</i>
-                        <p>Tables
+                    <a data-toggle="collapse" href="#ticket">
+                        <i class="material-icons">support_agent</i>
+                        <p>Suporte
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="tablesExamples">
+                    <div class="collapse" id="ticket">
                         <ul class="nav">
                             <li>
-                                <a href="tables/regular.html">Regular Tables</a>
+                                <a href="forms/regular.html">Enviar Ticket</a>
                             </li>
                             <li>
-                                <a href="tables/extended.html">Extended Tables</a>
-                            </li>
-                            <li>
-                                <a href="tables/datatables.net.html">DataTables.net</a>
+                                <a href="forms/extended.html">Visualizar Ticket</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
+                    <a href="dashboard.html">
+                        <i class="material-icons">settings</i>
+                        <p>Configurações</p>
+                    </a>
+                </li>
+
+                <li>
                     <a data-toggle="collapse" href="#mapsExamples">
-                        <i class="material-icons">place</i>
-                        <p>Maps
+                        <i class="material-icons">chat_bubble</i>
+                        <p>Contato
                             <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="mapsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="maps/google.html">Google Maps</a>
+                                <a href="maps/google.html">Email</a>
                             </li>
                             <li>
-                                <a href="maps/fullscreen.html">Full Screen Map</a>
+                                <a href="maps/fullscreen.html">Discord</a>
                             </li>
                             <li>
-                                <a href="maps/vector.html">Vector Map</a>
+                                <a href="maps/vector.html">Facebook</a>
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li>
-                    <a href="widgets.html">
-                        <i class="material-icons">widgets</i>
-                        <p>Widgets</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="charts.html">
-                        <i class="material-icons">timeline</i>
-                        <p>Charts</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="calendar.html">
-                        <i class="material-icons">date_range</i>
-                        <p>Calendar</p>
-                    </a>
                 </li>
             </ul>
         </div>

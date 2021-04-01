@@ -15,6 +15,8 @@ class User extends Authenticatable
 
     protected $primaryKey = 'account_id';
 
+    public $timestamps = false;
+
     use HasFactory, Notifiable;
 
     /**

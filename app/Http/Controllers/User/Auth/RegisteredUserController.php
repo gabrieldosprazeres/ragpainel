@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'login' => 'required|min:4|max:10|unique:login,userid',
+            'userid' => 'required|min:4|max:10|unique:login,userid',
             'email' => 'required|unique:login,email',
             'password' => 'required|min:8|confirmed'
         ]);
@@ -46,12 +46,28 @@ class RegisteredUserController extends Controller
                 ->withInput();
         }
 
+        /*
         DB::table('login')->insert([
             'userid' => $request->login,
             'email' => $request->email,
             'user_pass' => $request->password
         ]);
+        */
 
-        return redirect()->route('user.index.register');
+        $data = $request->only([
+            'userid',
+            'email',
+            'password',
+            'password_confirmation'
+        ]);
+
+        $user = User::create([
+            'userid' => $data['userid'],
+            'email' => $data['email'],
+            'user_pass' => $data['password']
+        ]);
+
+        Auth::login($user);
+        return redirect()->route('index');
     }
 }
