@@ -45,7 +45,7 @@ class AuthenticatedSessionController extends Controller
 
         $remember = $request->input('remember', false);
 
-        $id = $flight = User::where('userid', $request->input('userid'))->where('user_pass', $request->input('password'))->first();
+        $id = User::where('userid', $request->input('userid'))->where('user_pass', $request->input('password'))->first();
 
         if($id) {
             Auth::loginUsingId($id->account_id, $remember);
