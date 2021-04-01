@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
      */
     public function register(Request $request)
     {
-        $validator = Validator::make($request->only('userid', 'email', 'password'), [
+        $validator = Validator::make($request->only('userid', 'email', 'password', 'password_confirmation'), [
             'userid' => 'required|min:4|max:10|unique:login,userid',
             'email' => 'required|unique:login,email',
             'password' => 'required|min:8|confirmed'

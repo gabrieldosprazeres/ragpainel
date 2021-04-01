@@ -14,11 +14,15 @@ class IndexController extends Controller
     public function index(Request $request)
     {
 
-        return view('index', [
-            'user' => $request->user()->userid,
-            'photo' => $request->user()->photo
+        if(Auth::check()) {
+            return view('index', [
+                'user' => $request->user()->userid,
+                'photo' => $request->user()->photo
 
-        ]);
+            ]);
+        } else {
+            return view('index');
+        }
 
     }
 }

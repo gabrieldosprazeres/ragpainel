@@ -41,6 +41,7 @@
         </div>
         <div class="sidebar-wrapper">
             <div class="user">
+                @if(Auth::check())
                 <div class="photo">
                     <img src="{{asset('assets/img/users')}}/{{$photo}}" />
                 </div>
@@ -63,6 +64,14 @@
                         </ul>
                     </div>
                 </div>
+                @else
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+                            <a href="" class="btn btn-success">ENTRAR</a>
+                        </div>
+                    </div>
+                @endif
+
             </div>
             <ul class="nav">
                 <li class="active">
