@@ -140,7 +140,7 @@
                                 <div class="col-md-10">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Login</label>
-                                        <input type="text" class="form-control" value="{{$user}}" disabled>
+                                        <input type="text" name="login" class="form-control" value="{{$user}}" disabled>
                                     </div>
                                 </div>
                             </div>

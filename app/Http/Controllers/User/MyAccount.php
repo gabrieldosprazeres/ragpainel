@@ -53,7 +53,9 @@ class MyAccount extends Controller
     public function update(Request $request)
     {
 
-
+        if($request->user()->userid != $request->input('login')){
+            return back()->with('custom_alert_danger','O seu login não pode ser modificado.');
+        }
 
         $validator = Validator::make($request->only('email', 'password', 'password_confirmation'), [
             'email' => 'required',
@@ -74,7 +76,7 @@ class MyAccount extends Controller
             if(count($hasEmail) === 0) {
                 $request->user()->email = $request->input('email');
             } else {
-                    return back()->with('custom_alert_danger','Já existe um usuário com esse e-mail cadastrado.');
+                    return back()->with('custom_alert_danger','Já existe um usuário utilizando este e-mail.');
                 }
         }
 
