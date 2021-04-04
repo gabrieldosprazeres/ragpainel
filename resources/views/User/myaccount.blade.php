@@ -22,6 +22,21 @@
             </div>
         @endif
 
+            @if(Session::has('custom_alert_danger'))
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <div class="alert alert-danger">
+                                <span>
+                                {{ Session::get('custom_alert_danger') }}
+                                    @php
+                                        Session::forget('custom_alert_danger');
+                                    @endphp
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
             @if($errors->any())
 
                 <div class="row">
@@ -119,7 +134,7 @@
                         <h4 class="card-title">Editar Conta -
                             <small class="category">Complete seu perfil</small>
                         </h4>
-                        <form method="post">
+                        <form action="{{route('user.myAccount.update')}}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-10">
@@ -133,7 +148,7 @@
                                 <div class="col-md-10">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Email</label>
-                                        <input type="email" class="form-control" value="{{$email}}">
+                                        <input type="email" name="email" class="form-control" value="{{$email}}">
                                     </div>
                                 </div>
                             </div>
@@ -141,13 +156,13 @@
                                 <div class="col-md-5">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Senha</label>
-                                        <input type="password" minlength="8" class="form-control">
+                                        <input type="password" name="password" minlength="8" class="form-control" value="{{$password}}" required">
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group label-floating">
                                         <label class="control-label">Repita a nova senha</label>
-                                        <input type="password_confirmation" minlength="8" class="form-control">
+                                        <input type="password" name="password_confirmation" minlength="8" class="form-control" value="{{$password}}" required">
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +170,7 @@
                                 <div class="col-md-10">
                                     <div class="form-group">
                                         <label class="control-label">Data de Nascimento</label>
-                                        <input type="date" class="form-control" value="{{$birthdate}}">
+                                        <input type="date" name="birthdate" class="form-control" value="{{$birthdate}}">
                                     </div>
                                 </div>
                             </div>

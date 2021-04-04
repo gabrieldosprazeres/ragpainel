@@ -22,7 +22,8 @@ class MyAccount extends Controller
         'lastlogin' => $request->user()->lastlogin,
         'lastip' => $request->user()->last_ip,
         'cash' => $request->user()->cash,
-        'daysvip' => $request->user()->diasvip
+        'daysvip' => $request->user()->diasvip,
+        'password' => $request->user()->user_pass
         ]);
     }
 
@@ -47,5 +48,47 @@ class MyAccount extends Controller
 
         return back()->with('custom_alert','Foto de perfil atualizada com sucesso.');
 
+    }
+
+    public function update(Request $request)
+    {
+
+
+
+        $validator = Validator::make($request->only('email', 'password', 'password_confirmation'), [
+            'email' => 'required',
+            'password' => 'required|min:8|confirmed',
+            'birthdate' => 'date_format:"d/m/Y"',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('myaccount')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        if($request->user()->email != $request->input('email')){
+
+            $hasEmail = User::where('email', $request->input('email'))->get();
+
+            if(count($hasEmail) === 0) {
+                $request->user()->email = $request->input('email');
+            } else {
+                    return back()->with('custom_alert_danger','Já existe um usuário com esse e-mail cadastrado.');
+                }
+        }
+
+        if($request->user()->user_pass != $request->input('password')){
+
+            $request->user()->user_pass = $request->input('password');
+        }
+
+        if($request->user()->birthdate != $request->input('birthdate')){
+
+            $request->user()->birthdate = $request->input('birthdate');
+        }
+
+        $request->user()->save();
+        return back()->with('custom_alert','Dados atualizados com sucesso.');
     }
 }
