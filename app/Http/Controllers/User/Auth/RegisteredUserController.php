@@ -46,18 +46,11 @@ class RegisteredUserController extends Controller
                 ->withInput();
         }
 
-        $data = $request->only([
-            'userid',
-            'email',
-            'password',
-            'password_confirmation'
-        ]);
-
-        $user = User::create([
-            'userid' => $data['userid'],
-            'email' => $data['email'],
-            'user_pass' => $data['password']
-        ]);
+        $user = new User;
+        $user->userid = $request->userid;
+        $user->email = $request->email;
+        $user->user_pass = $request->password;
+        $user->save();
 
         Auth::login($user);
         return redirect()->route('index');
