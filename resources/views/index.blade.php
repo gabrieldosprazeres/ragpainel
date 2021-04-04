@@ -5,30 +5,6 @@
 
 @section('content')
 
-    <div class="row spacing">
-
-        <div class="col-md-12 text-center">
-            <button class="btn btn-success">
-                <span class="btn-label">
-                    <i class="material-icons">check</i>
-                </span>Login Server
-            </button>
-
-                <button class="btn btn-success">
-                    <span class="btn-label">
-                        <i class="material-icons">check</i>
-                    </span>Map Server
-                </button>
-
-                <button class="btn btn-success">
-                        <span class="btn-label">
-                            <i class="material-icons">check</i>
-                        </span>Char Server
-                </button>
-        </div>
-
-    </div>
-
     <div class="col-lg-3 col-md-6 col-sm-6 spacing-top">
         <div class="card card-stats">
             <div class="card-header" data-background-color="green">
@@ -36,7 +12,7 @@
             </div>
             <div class="card-content">
                 <p class="category">Jogadores Online</p>
-                <h3 class="card-title">12</h3>
+                <h3 class="card-title">{{$charsOnline}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -53,7 +29,7 @@
             </div>
             <div class="card-content">
                 <p class="category">Total de Contas</p>
-                <h3 class="card-title">12</h3>
+                <h3 class="card-title">{{$userCount}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -70,7 +46,7 @@
             </div>
             <div class="card-content">
                 <p class="category">Total de Personagens</p>
-                <h3 class="card-title">12</h3>
+                <h3 class="card-title">{{$charCount}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -87,7 +63,7 @@
             </div>
             <div class="card-content">
                 <p class="category">Total de Clãns</p>
-                <h3 class="card-title">12</h3>
+                <h3 class="card-title">{{$guildCount}}</h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -111,21 +87,16 @@
                     <th>Pontos</th>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_ouro.png')}}"></td>
-                        <td>Dakota Rice</td>
-                        <td>231</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_prata.png')}}"></td>
-                        <td>Minerva Hooper</td>
-                        <td>112</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_bronze.png')}}"></td>
-                        <td>Sage Rodriguez</td>
-                        <td>21</td>
-                    </tr>
+
+                        @foreach($topPVP as $top)
+                        <tr>
+                            <td><img src="assets/img/top/{{$np}}.png"></td>
+                            <td>{{$top->char_name}}</td>
+                            <td>{{$top->total}}</td>
+                            @php $np++; @endphp
+                        </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -146,21 +117,14 @@
                     <th>Pontos</th>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_ouro.png')}}"></td>
-                        <td>Dakota Rice</td>
-                        <td>231</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_prata.png')}}"></td>
-                        <td>Minerva Hooper</td>
-                        <td>112</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_bronze.png')}}"></td>
-                        <td>Sage Rodriguez</td>
-                        <td>21</td>
-                    </tr>
+                    @foreach($topGVG as $top)
+                        <tr>
+                            <td><img src="assets/img/top/{{$nw}}.png"></td>
+                            <td>{{$top->guild_name}}</td>
+                            <td>{{$top->total}}</td>
+                            @php $nw++; @endphp
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -181,21 +145,14 @@
                     <th>Pontos</th>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_ouro.png')}}"></td>
-                        <td>Dakota Rice</td>
-                        <td>231</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_prata.png')}}"></td>
-                        <td>Minerva Hooper</td>
-                        <td>112</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{asset('assets/img/top/trofeu_bronze.png')}}"></td>
-                        <td>Sage Rodriguez</td>
-                        <td>21</td>
-                    </tr>
+                    @foreach($topMVP as $top)
+                        <tr>
+                            <td><img src="assets/img/top/{{$nm}}.png"></td>
+                            <td>{{$top->name}}</td>
+                            <td>{{$top->mvps}}</td>
+                            @php $nm++; @endphp
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
