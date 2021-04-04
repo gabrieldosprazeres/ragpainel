@@ -47,7 +47,7 @@ class MyChars extends Controller
         $reset_char->hair = 1;
         $reset_char->hair_color = 1;
         $reset_char->clothes_color = 1;
-        $reset_char->body = 1;
+        $reset_char->body = 0;
         $reset_char->save();
 
         return back()->with('custom_alert','Estilo do personagem resetado com sucesso.');
