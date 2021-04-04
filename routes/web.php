@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\User\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\MyAccount;
+use App\Http\Controllers\User\MyChars;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::post('/login',[AuthenticatedSessionController::class, 'authenticate'])->n
 Route::get('/myaccount',[MyAccount::class, 'index'])->middleware('auth')->name('user.myAccount');
 Route::post('/myaccount',[MyAccount::class, 'update'])->middleware('auth')->name('user.myAccount.update');
 Route::post('/myaccount/upload',[MyAccount::class, 'uploadimg'])->middleware('auth')->name('user.myAccount.upload');
+Route::get('/mychars',[MyChars::class, 'index'])->middleware('auth')->name('user.mychars');
+Route::post('/mychars/resetposition',[MyChars::class, 'resetPosition'])->middleware('auth')->name('user.resetposition');
+Route::post('/mychars/resetstyle',[MyChars::class, 'resetStyle'])->middleware('auth')->name('user.resetstyle');
