@@ -5,6 +5,7 @@ use App\Http\Controllers\User\Auth\RegisteredUserController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\User\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\User\MyAccount;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::post('/register',[RegisteredUserController::class, 'register'])->name('us
 
 Route::get('/login',[AuthenticatedSessionController::class, 'index'])->name('user.index.login');
 Route::post('/login',[AuthenticatedSessionController::class, 'authenticate'])->name('user.login');
+
+Route::get('/myaccount',[MyAccount::class, 'index'])->middleware('auth')->name('user.myAccount');
