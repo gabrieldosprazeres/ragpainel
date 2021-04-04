@@ -11628,7 +11628,7 @@ input[type="file"] {
     display: none;
 }
 
-.card-content label span {
+.card-content .photo {
     border-radius: 5px;
     background-image: var(--bs-gradient);
     border-color: #0d6efd;

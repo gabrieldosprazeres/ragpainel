@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Http\Controllers\IndexController;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -20,6 +21,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function index()
     {
+
+        if (Auth::check()) {
+            return redirect()->route('index');
+        }
+
         return view('user.login');
     }
 
@@ -71,6 +77,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('index');
     }
 }

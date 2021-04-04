@@ -53,13 +53,13 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#">Minha Conta</a>
+                                <a href="{{route('user.myaccount')}}">Minha Conta</a>
                             </li>
                             <li>
-                                <a href="#">Meus Personagens</a>
+                                <a href="{{route('user.mychars')}}">Meus Personagens</a>
                             </li>
                             <li>
-                                <a href="#">Sair</a>
+                                <a href="{{route('user.logout')}}">Sair</a>
                             </li>
                         </ul>
                     </div>
@@ -67,7 +67,7 @@
                 @else
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
-                            <a href="" class="btn btn-success">ENTRAR</a>
+                            <a href="{{route('user.login')}}" class="btn btn-success">ENTRAR</a>
                         </div>
                     </div>
                 @endif

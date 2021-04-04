@@ -26,10 +26,11 @@ Route::post('/register',[RegisteredUserController::class, 'register'])->name('us
 
 Route::get('/login',[AuthenticatedSessionController::class, 'index'])->name('user.index.login');
 Route::post('/login',[AuthenticatedSessionController::class, 'authenticate'])->name('user.login');
+Route::get('/logout',[AuthenticatedSessionController::class, 'destroy'])->middleware('auth')->name('user.logout');
 
-Route::get('/myaccount',[MyAccount::class, 'index'])->middleware('auth')->name('user.myAccount');
-Route::post('/myaccount',[MyAccount::class, 'update'])->middleware('auth')->name('user.myAccount.update');
-Route::post('/myaccount/upload',[MyAccount::class, 'uploadimg'])->middleware('auth')->name('user.myAccount.upload');
+Route::get('/myaccount',[MyAccount::class, 'index'])->middleware('auth')->name('user.myaccount');
+Route::post('/myaccount',[MyAccount::class, 'update'])->middleware('auth')->name('user.myaccount.update');
+Route::post('/myaccount/upload',[MyAccount::class, 'uploadimg'])->middleware('auth')->name('user.myaccount.upload');
 Route::get('/mychars',[MyChars::class, 'index'])->middleware('auth')->name('user.mychars');
 Route::post('/mychars/resetposition',[MyChars::class, 'resetPosition'])->middleware('auth')->name('user.resetposition');
 Route::post('/mychars/resetstyle',[MyChars::class, 'resetStyle'])->middleware('auth')->name('user.resetstyle');

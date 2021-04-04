@@ -65,9 +65,9 @@
                 <div class="card-content">
                     <h6 class="category text-gray">@if($level == 0) Jogador Normal @elseif($level == 1) Jogador VIP @elseif($level == 10) Community Manager @elseif($level == 20) Game Master @elseif($level >= 50) Administrador @endif</h6>
                     <h4 class="card-title">{{ucfirst(trans($user))}}</h4>
-                    <form action="{{route('user.myAccount.upload')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('user.myaccount.upload')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <label><input type="file" onchange="this.form.submit()" name="myPhoto"><span>Alterar Foto</span></label>
+                        <label class="photo"><input type="file" onchange="this.form.submit()" name="myPhoto"><span>Alterar Foto</span></label>
                     </form>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                         <h4 class="card-title">Editar Conta -
                             <small class="category">Complete seu perfil</small>
                         </h4>
-                        <form action="{{route('user.myAccount.update')}}" method="post">
+                        <form action="{{route('user.myaccount.update')}}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-10">
