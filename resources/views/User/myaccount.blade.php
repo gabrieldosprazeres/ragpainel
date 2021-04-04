@@ -7,23 +7,59 @@
 
     <div class="container-fluid">
 
+        @if(Session::has('custom_alert'))
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                    <div class="alert alert-success">
+                                <span>
+                                {{ Session::get('custom_alert') }}
+                                    @php
+                                        Session::forget('custom_alert');
+                                    @endphp
+                                </span>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+            @if($errors->any())
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+
+                        <div class="alert alert-danger">
+                            <span>
+
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            @endif
+
+
         <div class="col-md-4">
             <div class="card card-profile">
                 <div class="card-avatar">
-                    <a href="#pablo">
                         <img class="img" src="{{asset('assets/img/users')}}/{{$photo}}" />
-                    </a>
                 </div>
                 <div class="card-content">
                     <h6 class="category text-gray">@if($level == 0) Jogador Normal @elseif($level == 1) Jogador VIP @elseif($level == 10) Community Manager @elseif($level == 20) Game Master @elseif($level >= 50) Administrador @endif</h6>
                     <h4 class="card-title">{{ucfirst(trans($user))}}</h4>
-                    <a href="#pablo" class="btn btn-primary btn-round">Alterar Foto</a>
+                    <form action="{{route('user.myAccount.upload')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <label><input type="file" onchange="this.form.submit()" name="myPhoto"><span>Alterar Foto</span></label>
+                    </form>
                 </div>
             </div>
             <div class="col-md-13">
                 <div class="card">
                     <div class="card-header card-header-icon" data-background-color="purple">
-                        <i class="material-icons">perm_identity</i>
+                        <i class="material-icons">person_add_alt_1</i>
                     </div>
                     <div class="card-content">
                         <h4 class="card-title">Informações Extras

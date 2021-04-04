@@ -27,3 +27,4 @@ Route::get('/login',[AuthenticatedSessionController::class, 'index'])->name('use
 Route::post('/login',[AuthenticatedSessionController::class, 'authenticate'])->name('user.login');
 
 Route::get('/myaccount',[MyAccount::class, 'index'])->middleware('auth')->name('user.myAccount');
+Route::post('/myaccount/upload',[MyAccount::class, 'uploadimg'])->middleware('auth')->name('user.myAccount.upload');
