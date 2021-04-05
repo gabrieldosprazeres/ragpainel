@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\MyAccount;
 use App\Http\Controllers\User\MyChars;
 use App\Http\Controllers\Admin\LogsController;
-use App\Http\Middleware\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +36,4 @@ Route::get('/mychars',[MyChars::class, 'index'])->middleware('auth')->name('user
 Route::post('/mychars/resetposition',[MyChars::class, 'resetPosition'])->middleware('auth')->name('user.resetposition');
 Route::post('/mychars/resetstyle',[MyChars::class, 'resetStyle'])->middleware('auth')->name('user.resetstyle');
 
-Route::get('/admin/logs',[LogsController::class, 'index'])->middleware('admin')->name('admin.logs');
+Route::get('/admin/logs',[LogsController::class, 'index'])->middleware('auth', 'admin')->name('admin.logs');
