@@ -49,10 +49,10 @@
                                     <td>{{$char->guild_name}}</td>
                                     <td>
 
-                                        <form class="form-inline" action="{{route('user.resetposition', ['id' => $char->char_id])}}" method="post">
+                                        <form class="form-inline" action="{{route('user.resetposition', ['id' => $char->charid])}}" method="post">
                                             @csrf
                                         <button type="submit" class="btn btn-success block-inline">Resetar Posição</button>
-                                        <button type=submit" class="btn btn-info" formaction="{{route('user.resetstyle', ['id' => $char->char_id])}}">Resetar Aparência</button>
+                                        <button type=submit" class="btn btn-info" formaction="{{route('user.resetstyle', ['id' => $char->charid])}}">Resetar Aparência</button>
                                         </form>
                                     </td>
 

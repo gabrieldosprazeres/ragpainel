@@ -18,7 +18,7 @@ class MyChars extends Controller
 
         $id = $request->user()->account_id;
 
-        $chars = DB::select("SELECT c.sex, c.account_id, c.char_id, c.name as char_name, c.class, c.base_level, c.job_level, c.guild_id, c.last_map, g.char_id, g.emblem_id, g.name as guild_name FROM `char` AS c LEFT JOIN guild AS g ON c.char_id = g.char_id  WHERE c.account_id=$id");
+        $chars = DB::select("SELECT c.sex, c.account_id, c.char_id as charid, c.name as char_name, c.class, c.base_level, c.job_level, c.guild_id, c.last_map, g.char_id, g.emblem_id, g.name as guild_name FROM `char` AS c LEFT JOIN guild AS g ON c.char_id = g.char_id  WHERE c.account_id=$id");
 
         return view('user.mychars', [
             'user' => $request->user()->userid,
