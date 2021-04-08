@@ -103,7 +103,7 @@
                                 <a href="{{route('admin.managerstaff')}}">Gerenciar Equipe</a>
                             </li>
                             <li>
-                                <a href="pages/lock.html">Gerenciar Punições</a>
+                                <a href="{{route('admin.managerban')}}">Gerenciar Banimentos</a>
                             </li>
                             <li>
                                 <a href="pages/lock.html">Gerenciar Itens</a>

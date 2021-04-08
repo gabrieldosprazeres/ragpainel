@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\LogsController;
 use App\Http\Controllers\Admin\ManagerCashController;
 use App\Http\Controllers\Admin\ManagerVipController;
 use App\Http\Controllers\Admin\ManagerStaffController;
+use App\Http\Controllers\Admin\ManagerBanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,9 @@ Route::get('/admin/managerstaff',[ManagerStaffController::class, 'index'])->midd
 Route::post('/admin/managerstaff/add',[ManagerStaffController::class, 'add'])->middleware('auth', 'admin')->name('admin.managerstaff.add');
 Route::post('/admin/managerstaff/remove',[ManagerStaffController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managerstaff.remove');
 Route::post('/admin/managerstaff',[ManagerStaffController::class, 'find'])->middleware('auth', 'admin')->name('admin.managerstaff.find');
+
+// Gerenciar Punições
+Route::get('/admin/managerban',[ManagerBanController::class, 'index'])->middleware('auth', 'admin')->name('admin.managerban');
+Route::post('/admin/managerban/add',[ManagerBanController::class, 'add'])->middleware('auth', 'admin')->name('admin.managerban.add');
+Route::post('/admin/managerban/remove',[ManagerBanController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managerban.remove');
+Route::post('/admin/managerban',[ManagerBanController::class, 'find'])->middleware('auth', 'admin')->name('admin.managerban.find');
