@@ -97,10 +97,10 @@
                                 <a href="{{route('admin.managercash')}}">Gerenciar Créditos</a>
                             </li>
                             <li>
-                                <a href="pages/login.html">Gerenciar VIP</a>
+                                <a href="{{route('admin.managervip')}}">Gerenciar VIP</a>
                             </li>
                             <li>
-                                <a href="pages/register.html">Gerenciar Equipe</a>
+                                <a href="{{route('admin.managerstaff')}}">Gerenciar Equipe</a>
                             </li>
                             <li>
                                 <a href="pages/lock.html">Gerenciar Punições</a>

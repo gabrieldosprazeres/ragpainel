@@ -10,6 +10,7 @@ use App\Http\Controllers\User\MyChars;
 use App\Http\Controllers\Admin\LogsController;
 use App\Http\Controllers\Admin\ManagerCashController;
 use App\Http\Controllers\Admin\ManagerVipController;
+use App\Http\Controllers\Admin\ManagerStaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,9 @@ Route::get('/admin/managervip',[ManagerVipController::class, 'index'])->middlewa
 Route::post('/admin/managervip/add',[ManagerVipController::class, 'add'])->middleware('auth', 'admin')->name('admin.managervip.add');
 Route::post('/admin/managervip/remove',[ManagerVipController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managervip.remove');
 Route::post('/admin/managervip',[ManagerVipController::class, 'find'])->middleware('auth', 'admin')->name('admin.managervip.find');
+
+// Gerenciar Equipe
+Route::get('/admin/managerstaff',[ManagerStaffController::class, 'index'])->middleware('auth', 'admin')->name('admin.managerstaff');
+Route::post('/admin/managerstaff/add',[ManagerStaffController::class, 'add'])->middleware('auth', 'admin')->name('admin.managerstaff.add');
+Route::post('/admin/managerstaff/remove',[ManagerStaffController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managerstaff.remove');
+Route::post('/admin/managerstaff',[ManagerStaffController::class, 'find'])->middleware('auth', 'admin')->name('admin.managerstaff.find');
