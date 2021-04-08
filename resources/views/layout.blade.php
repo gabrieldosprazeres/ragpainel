@@ -120,19 +120,19 @@
                     <div class="collapse" id="componentsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="components/buttons.html">Ranking de WOE</a>
+                                <a href="{{route('rankings.woe')}}">Ranking de WOE</a>
                             </li>
                             <li>
-                                <a href="components/grid.html">Ranking de MVP</a>
+                                <a href="{{route('rankings.mvp')}}">Ranking de MVP</a>
                             </li>
                             <li>
-                                <a href="components/panels.html">Ranking de Zeny's</a>
+                                <a href="{{route('rankings.zeny')}}">Ranking de Zeny's</a>
                             </li>
                             <li>
-                                <a href="components/sweet-alert.html">Ranking de PVP</a>
+                                <a href="{{route('rankings.pvp')}}">Ranking de PVP</a>
                             </li>
                             <li>
-                                <a href="components/notifications.html">Ranking de Eventos</a>
+                                <a href="{{route('rankings.event')}}">Ranking de Eventos</a>
                             </li>
                         </ul>
                     </div>

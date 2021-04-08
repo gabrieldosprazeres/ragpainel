@@ -12,6 +12,11 @@ use App\Http\Controllers\Admin\ManagerCashController;
 use App\Http\Controllers\Admin\ManagerVipController;
 use App\Http\Controllers\Admin\ManagerStaffController;
 use App\Http\Controllers\Admin\ManagerBanController;
+use App\Http\Controllers\Rankings\GVGController;
+use App\Http\Controllers\Rankings\MVPController;
+use App\Http\Controllers\Rankings\ZenyController;
+use App\Http\Controllers\Rankings\PVPController;
+use App\Http\Controllers\Rankings\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +44,13 @@ Route::post('/myaccount/upload',[MyAccount::class, 'uploadimg'])->middleware('au
 Route::get('/mychars',[MyChars::class, 'index'])->middleware('auth')->name('user.mychars');
 Route::post('/mychars/resetposition',[MyChars::class, 'resetPosition'])->middleware('auth')->name('user.resetposition');
 Route::post('/mychars/resetstyle',[MyChars::class, 'resetStyle'])->middleware('auth')->name('user.resetstyle');
+
+// Rankings
+Route::get('/rankings/woe',[GVGController::class, 'index'])->name('rankings.woe');
+Route::get('/rankings/mvp',[MVPController::class, 'index'])->name('rankings.mvp');
+Route::get('/rankings/zeny',[ZenyController::class, 'index'])->name('rankings.zeny');
+Route::get('/rankings/pvp',[PVPController::class, 'index'])->name('rankings.pvp');
+Route::get('/rankings/event',[EventController::class, 'index'])->name('rankings.event');
 
 // Administrador.
 
