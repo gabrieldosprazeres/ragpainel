@@ -91,10 +91,10 @@
                     <div class="collapse" id="pagesExamples">
                         <ul class="nav">
                             <li>
-                                <a href="pages/pricing.html">Visualizar Logs</a>
+                                <a href="{{route('admin.logs')}}">Visualizar Logs</a>
                             </li>
                             <li>
-                                <a href="pages/timeline.html">Gerenciar Créditos</a>
+                                <a href="{{route('admin.managercash')}}">Gerenciar Créditos</a>
                             </li>
                             <li>
                                 <a href="pages/login.html">Gerenciar VIP</a>

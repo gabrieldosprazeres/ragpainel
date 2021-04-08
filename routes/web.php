@@ -9,6 +9,7 @@ use App\Http\Controllers\User\MyAccount;
 use App\Http\Controllers\User\MyChars;
 use App\Http\Controllers\Admin\LogsController;
 use App\Http\Controllers\Admin\ManagerCashController;
+use App\Http\Controllers\Admin\ManagerVipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +39,18 @@ Route::post('/mychars/resetposition',[MyChars::class, 'resetPosition'])->middlew
 Route::post('/mychars/resetstyle',[MyChars::class, 'resetStyle'])->middleware('auth')->name('user.resetstyle');
 
 // Administrador.
+
+// Logs
 Route::get('/admin/logs',[LogsController::class, 'index'])->middleware('auth', 'admin')->name('admin.logs');
+
+// Gerenciar Cash
 Route::get('/admin/managercash',[ManagerCashController::class, 'index'])->middleware('auth', 'admin')->name('admin.managercash');
 Route::post('/admin/managercash/add',[ManagerCashController::class, 'add'])->middleware('auth', 'admin')->name('admin.managercash.add');
 Route::post('/admin/managercash/remove',[ManagerCashController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managercash.remove');
 Route::post('/admin/managercash',[ManagerCashController::class, 'find'])->middleware('auth', 'admin')->name('admin.managercash.find');
+
+// Gerenciar VIP
+Route::get('/admin/managervip',[ManagerVipController::class, 'index'])->middleware('auth', 'admin')->name('admin.managervip');
+Route::post('/admin/managervip/add',[ManagerVipController::class, 'add'])->middleware('auth', 'admin')->name('admin.managervip.add');
+Route::post('/admin/managervip/remove',[ManagerVipController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managervip.remove');
+Route::post('/admin/managervip',[ManagerVipController::class, 'find'])->middleware('auth', 'admin')->name('admin.managervip.find');
