@@ -30,6 +30,7 @@ class IndexController extends Controller
         $np = 0;
         $nw = 0;
         $nm = 0;
+        $level = 0;
 
         $topPVP = RankingPVP::select('char_name', 'total')->orderByDesc('total')->limit(3)->get();
 
@@ -48,6 +49,7 @@ class IndexController extends Controller
                 'topPVP' => $topPVP,
                 'topGVG' => $topGVG,
                 'topMVP' => $topMVP,
+                'level' => $request->user()->group_id,
                 'np' => $np,
                 'nw' => $nw,
                 'nm' => $nm
@@ -61,6 +63,7 @@ class IndexController extends Controller
                 'topPVP' => $topPVP,
                 'topGVG' => $topGVG,
                 'topMVP' => $topMVP,
+                'level' => $level,
                 'np' => $np,
                 'nw' => $nw,
                 'nm' => $nm

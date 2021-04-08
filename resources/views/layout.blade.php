@@ -81,6 +81,7 @@
                         <p>Início</p>
                     </a>
                 </li>
+                @if($level == 99)
                 <li>
                     <a data-toggle="collapse" href="#pagesExamples">
                         <i class="material-icons">security</i>
@@ -105,15 +106,10 @@
                             <li>
                                 <a href="{{route('admin.managerban')}}">Gerenciar Banimentos</a>
                             </li>
-                            <li>
-                                <a href="pages/lock.html">Gerenciar Itens</a>
-                            </li>
-                            <li>
-                                <a href="pages/lock.html">Gerenciar Monstros</a>
-                            </li>
                         </ul>
                     </div>
                 </li>
+                @endif
                 <li>
                     <a data-toggle="collapse" href="#componentsExamples">
                         <i class="material-icons">emoji_events</i>
