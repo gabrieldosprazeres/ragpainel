@@ -45,8 +45,8 @@ class ManagerVipController extends Controller
         $user = User::where('userid', $request->input('login'))->first();
 
         if($user) {
-            $user->diasvip += $request->vipadd;
-            $user->group_id = 1;
+            $user->vip_time += $request->vipadd*86400000;
+            $user->group_id = 5;
             $user->save();
             return back()->with('custom_alert_success', 'Dias VIP adicionados com sucesso na conta: '.$request->input('login').'.');
         } else {
@@ -71,8 +71,8 @@ class ManagerVipController extends Controller
         $user = User::where('userid', $request->input('login'))->first();
 
         if($user) {
-            $user->diasvip -= $request->vipremove;
-            if($user->diasvip <= 1){
+            $user->vip_time -= $request->vipremove*86400000;
+            if($user->vip_time <= 1){
                 $user->group_id = 0;
             }
             $user->save();
@@ -103,7 +103,7 @@ class ManagerVipController extends Controller
                 'photo' => $request->user()->photo,
                 'level' => $request->user()->group_id,
                 'findlogin' => $user->userid,
-                'findvip' => $user->diasvip
+                'findvip' => intval($user->vip_time/86400000)
             ]);
         } else {
             return back()->with('custom_alert', 'Usuário não encontrado.');
