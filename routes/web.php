@@ -17,6 +17,7 @@ use App\Http\Controllers\Rankings\MVPController;
 use App\Http\Controllers\Rankings\ZenyController;
 use App\Http\Controllers\Rankings\PVPController;
 use App\Http\Controllers\Rankings\EventController;
+use App\Http\Controllers\Database\DatabaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,9 @@ Route::get('/rankings/mvp',[MVPController::class, 'index'])->name('rankings.mvp'
 Route::get('/rankings/zeny',[ZenyController::class, 'index'])->name('rankings.zeny');
 Route::get('/rankings/pvp',[PVPController::class, 'index'])->name('rankings.pvp');
 Route::get('/rankings/event',[EventController::class, 'index'])->name('rankings.event');
+
+// Databases.
+Route::get('/database/item', [DatabaseController::class, 'item'])->name('database.item');
 
 // Administrador.
 

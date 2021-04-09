@@ -11620,6 +11620,19 @@ footer .btn {
     height: 30px;
 }
 
+.tablecentericon th {
+    color: purple;
+}
+
+.tablecentericon td, th {
+    text-align: center;
+}
+
+.tablecentericon img {
+    width: 25px;
+    height: 25px;
+}
+
 .spacing-top {
     padding-bottom: 3%;
 }
@@ -11641,4 +11654,8 @@ input[type="file"] {
 .card-avatar img {
     height: 150px;
     width: 150px;
+}
+
+.modal-body span {
+    font-weight: bold;
 }
