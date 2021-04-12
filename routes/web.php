@@ -56,6 +56,8 @@ Route::get('/rankings/event',[EventController::class, 'index'])->name('rankings.
 // Databases.
 Route::get('/database/item', [DatabaseController::class, 'item'])->name('database.item');
 Route::post('/database/item', [DatabaseController::class, 'itemSearch'])->name('database.search.item');
+Route::get('/database/monster', [DatabaseController::class, 'monster'])->name('database.monster');
+Route::post('/database/monster', [DatabaseController::class, 'monsterSearch'])->name('database.search.monster');
 
 // Administrador.
 

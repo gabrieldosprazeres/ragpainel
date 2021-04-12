@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Contracts\DataTable;
 use App\Models\Item;
+use App\Models\Monster;
 
 class DatabaseController extends Controller
 {
@@ -139,6 +140,127 @@ class DatabaseController extends Controller
             32768 => 'Munição'];
 
         return $equipIn;
+
+    }
+
+    public function monster(Request $request)
+    {
+
+        $page = $request->has('page') ? $request->get('page') : 1;
+        $limit = $request->has('limit') ? $request->get('limit') : 10;
+
+        $monsters = Monster::limit($limit)->offset(($page - 1) * $limit)->paginate();
+
+        if(Auth::check()) {
+            return view('database.monster', [
+                'user' => $request->user()->userid,
+                'photo' => $request->user()->photo,
+                'level' => $request->user()->group_id,
+                'monster_size' => $this->size(),
+                'monster_element' => $this->element(),
+                'monster_race' => $this->race(),
+                'monsters' => $monsters,
+            ]);
+        } else {
+            return view('database.monster', [
+                'user' => null,
+                'photo' => null,
+                'level' => null,
+                'type_itens' => $this->type(),
+                'monster_size' => $this->size(),
+                'monster_element' => $this->element(),
+                'monster_race' => $this->race(),
+                'monsters' => $monsters,
+            ]);
+        }
+
+    }
+
+    public function size(){
+
+        $monster_size = [
+            0 => 'Médio',
+            1 => 'Pequeno',
+            2 => 'Grande'
+        ];
+
+        return $monster_size;
+    }
+
+    public function element(){
+
+        $monster_element = [
+            0 => 'Neutro',
+            1 => 'Água',
+            2 => 'Terra',
+            3 => 'Fogo',
+            4 => 'Vento',
+            5 => 'Veneno',
+            6 => 'Sagrado',
+            7 => 'Sombrio',
+            8 => 'Fantasma',
+            9 => 'Maldito'
+        ];
+
+        return $monster_element;
+    }
+
+    public function race(){
+        $monster_race = [
+            0 => 'Amorfo',
+            1 => 'Morto-Vivo',
+            2 => 'Bruto',
+            3 => 'Planta',
+            4 => 'Inseto',
+            5 => 'Peixe',
+            6 => 'Demônio',
+            7 => 'Humanóide',
+            8 => 'Anjo',
+            9 => 'Dragão',
+        ];
+
+        return $monster_race;
+    }
+
+    public function monsterSearch(Request $request)
+    {
+        $validator = Validator::make($request->only('monsterSearch'), [
+            'monsterSearch' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('database/monster')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $name = Monster::where('iName', 'like', '%' .$request->input('monsterSearch') . '%')->paginate();
+
+        if($name){
+            $find = $name;
+        }
+
+        if (Auth::check()) {
+            return view('database.monster', [
+                'user' => $request->user()->userid,
+                'photo' => $request->user()->photo,
+                'level' => $request->user()->group_id,
+                'monster_size' => $this->size(),
+                'monster_element' => $this->element(),
+                'monster_race' => $this->race(),
+                'monsters' => $find,
+            ]);
+        } else {
+            return view('database.monster', [
+                'user' => null,
+                'photo' => null,
+                'level' => null,
+                'monster_size' => $this->size(),
+                'monster_element' => $this->element(),
+                'monster_race' => $this->race(),
+                'monsters' => $find
+            ]);
+        }
 
     }
 }

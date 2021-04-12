@@ -5,21 +5,6 @@
 
 @section('content')
 
-    @if(Session::has('custom_alert'))
-        <div class="row">
-            <div class="col-md-4">
-                <div class="alert alert-danger">
-                                <span>
-                                {{ Session::get('custom_alert') }}
-                                    @php
-                                        Session::forget('custom_alert');
-                                    @endphp
-                                </span>
-                </div>
-            </div>
-        </div>
-    @endif
-
     @if($errors->any())
 
         <div class="row">
@@ -88,7 +73,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <p><span>Nome:</span> {{$item->name_japanese}}</p>
-                                        <p><span>Tipo:</span> @if(in_array($item->type, $type_itens)) {{$type_itens[$item->type]}} @endif Valor Inválido</p>
+                                        <p><span>Tipo:</span> {{$type_itens[$item->type]}}</p>
                                         <p><span>Valor de Compra:</span> {{$item->price_buy}}</p>
                                         <p><span>Valor de Venda:</span> {{$item->price_sell}}</p>
                                         <p><span>Peso:</span> {{$item->weight}}</p>
@@ -96,8 +81,9 @@
                                             <p><span>Defesa:</span> {{$item->defence}}</p>
                                             <p><span>ATK/MATK:</span> {{$item->atk}}/{{$item->matk}}</p>
                                             <p><span>Slots:</span> {{$item->slots}}</span></p>
-                                            <p><span>Equipa em:</span> @if(in_array($item->item_locations, $equipIn)) {{$equipIn[$item->item_locations]}} @endif Valor Inválido</p>
+                                            <p><span>Equipa em:</span> {{$equipIn[$item->equip_locations]}}</p>
                                         @endif
+
                                         @if($type_itens[$item->type] == "Arma")
                                             <p><span>Nível da Arma:</span> {{$item->atk}}/{{$item->matk}}</p>
                                         @endif
