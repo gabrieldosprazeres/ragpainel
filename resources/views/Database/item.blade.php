@@ -128,7 +128,7 @@
                     </tbody>
 
                 </table>
-                <div class="text-right"> {{$itens->links()}} </div>
+                <div class="text-right"> {{$itens->links("pagination::bootstrap-4")}} </div>
             </div>
         </div>
     </div>
