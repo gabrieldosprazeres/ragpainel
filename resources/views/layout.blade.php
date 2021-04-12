@@ -147,10 +147,10 @@
                     <div class="collapse" id="formsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="forms/regular.html">Itens</a>
+                                <a href="{{route('database.item')}}">Itens</a>
                             </li>
                             <li>
-                                <a href="forms/extended.html">Monstros</a>
+                                <a href="{{route('database.monster')}}">Monstros</a>
                             </li>
                         </ul>
                     </div>
