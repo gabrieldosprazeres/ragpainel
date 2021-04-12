@@ -20,25 +20,25 @@ class DatabaseController extends Controller
 {
     public function item(Request $request)
     {
-        $itens = Item::paginate(7000);
+        $itens = Item::paginate(1000);
 
         if(Auth::check()) {
             return view('database.item', [
                 'user' => $request->user()->userid,
                 'photo' => $request->user()->photo,
                 'level' => $request->user()->group_id,
-                'itens' => $itens,
                 'type_itens' => $this->type(),
-                'equip' => $this->equip()
+                'equipIn' => $this->equip(),
+                'itens' => $itens
             ]);
         } else {
             return view('database.item', [
-                'user' => $request->user()->userid,
-                'photo' => $request->user()->photo,
-                'level' => $level,
-                'itens' => $itens,
+                'user' => null,
+                'photo' => null,
+                'level' => null,
                 'type_itens' => $this->type(),
-                'equip' => $this->equip()
+                'equipIn' => $this->equip(),
+                'itens' => $itens
             ]);
         }
 

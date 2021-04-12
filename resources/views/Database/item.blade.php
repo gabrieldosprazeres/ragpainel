@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <p><span>Nome:</span> {{$item->name_japanese}}</p>
-                                        <p><span>Tipo:</span> {{$type_itens[$item->type]}}</p>
+                                        <p><span>Tipo:</span> @if(in_array($item->type, $type_itens)) {{$type_itens[$item->type]}} @endif Valor Inválido</p>
                                         <p><span>Valor de Compra:</span> {{$item->price_buy}}</p>
                                         <p><span>Valor de Venda:</span> {{$item->price_sell}}</p>
                                         <p><span>Peso:</span> {{$item->weight}}</p>
@@ -52,7 +52,7 @@
                                             <p><span>Defesa:</span> {{$item->defence}}</p>
                                             <p><span>ATK/MATK:</span> {{$item->atk}}/{{$item->matk}}</p>
                                             <p><span>Slots:</span> {{$item->slots}}</span></p>
-                                            <p><span>Equipa em:</span> {{$equip[$item->equip_locations]}}</p>
+                                            <p><span>Equipa em:</span> @if(in_array($item->item_locations, $equipIn)) {{$equipIn[$item->item_locations]}} @endif Valor Inválido</p>
                                         @endif
                                         @if($type_itens[$item->type] == "Arma")
                                             <p><span>Nível da Arma:</span> {{$item->atk}}/{{$item->matk}}</p>
@@ -72,8 +72,7 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-simple">Nice Button</button>
-                                        <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fechar</button>
                                     </div>
                                 </div>
                             </div>
