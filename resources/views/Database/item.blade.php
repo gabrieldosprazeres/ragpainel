@@ -5,6 +5,40 @@
 
 @section('content')
 
+    @if(Session::has('custom_alert'))
+        <div class="row">
+            <div class="col-md-4">
+                <div class="alert alert-danger">
+                                <span>
+                                {{ Session::get('custom_alert') }}
+                                    @php
+                                        Session::forget('custom_alert');
+                                    @endphp
+                                </span>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if($errors->any())
+
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="alert alert-danger">
+                            <span>
+
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach</span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    @endif
+
     <div class="card">
         <div class="card-header card-header-icon" data-background-color="purple">
             <i class="material-icons">dns</i>
@@ -12,7 +46,17 @@
         <div class="card-content">
             <h4 class="card-title">Database de Itens</h4>
             <div class="material-datatables tablecentericon">
-                <table id="datatables7" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                <table class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                        <div class="col-md-3 col-md-offset-9">
+                            <div class="form-group label-floating">
+                                <form method="post" action="{{route('database.search.item')}}">
+                                    @csrf
+                                    <label class="control-label">Pesquisar Nome</label>
+                                    <input type="text" name="itemSearch" class="form-control">
+                                    <button type="submit" class="btn btn-primary btn-xs pull-right">Pesquisar</button>
+                                </form>
+                            </div>
+                        </div>
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -70,6 +114,8 @@
                                             <p><span>Script ao desequipar:</span> {{$item->unequip_script}}</p>
                                         @endif
 
+
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Fechar</button>
@@ -80,7 +126,9 @@
 
                     @endforeach
                     </tbody>
+
                 </table>
+                <div class="text-right"> {{$itens->links()}} </div>
             </div>
         </div>
     </div>

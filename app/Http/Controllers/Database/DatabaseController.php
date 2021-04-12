@@ -13,6 +13,7 @@ use App\Models\Guild;
 use App\Models\RankingPVP;
 use App\Models\RankingGVG;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Contracts\DataTable;
 use App\Models\Item;
 
@@ -20,7 +21,11 @@ class DatabaseController extends Controller
 {
     public function item(Request $request)
     {
-        $itens = Item::paginate(1000);
+
+        $page = $request->has('page') ? $request->get('page') : 1;
+        $limit = $request->has('limit') ? $request->get('limit') : 10;
+
+        $itens = Item::limit($limit)->offset(($page - 1) * $limit)->paginate();
 
         if(Auth::check()) {
             return view('database.item', [
@@ -41,6 +46,46 @@ class DatabaseController extends Controller
                 'itens' => $itens
             ]);
         }
+
+    }
+
+    public function itemSearch(Request $request)
+    {
+        $validator = Validator::make($request->only('itemSearch'), [
+            'itemSearch' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('database/item')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+            $name = Item::where('name_japanese', 'like', '%' .$request->input('itemSearch') . '%')->paginate();
+
+            if($name){
+                $find = $name;
+            }
+
+            if (Auth::check()) {
+                return view('database.item', [
+                    'user' => $request->user()->userid,
+                    'photo' => $request->user()->photo,
+                    'level' => $request->user()->group_id,
+                    'type_itens' => $this->type(),
+                    'equipIn' => $this->equip(),
+                    'itens' => $find,
+                ]);
+            } else {
+                return view('database.item', [
+                    'user' => null,
+                    'photo' => null,
+                    'level' => null,
+                    'type_itens' => $this->type(),
+                    'equipIn' => $this->equip(),
+                    'itens' => $find
+                ]);
+            }
 
     }
 
