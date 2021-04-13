@@ -165,10 +165,10 @@
                     <div class="collapse" id="ticket">
                         <ul class="nav">
                             <li>
-                                <a href="forms/regular.html">Enviar Ticket</a>
+                                <a href="{{route('tickets.index')}}">Enviar Ticket</a>
                             </li>
                             <li>
-                                <a href="forms/extended.html">Visualizar Ticket</a>
+                                <a href="{{route('tickets.mytickets')}}">Visualizar Tickets</a>
                             </li>
                         </ul>
                     </div>

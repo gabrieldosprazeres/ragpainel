@@ -50,6 +50,9 @@ Route::post('/mychars/resetstyle',[MyChars::class, 'resetStyle'])->middleware('a
 // Tickets
 Route::get('/tickets',[TicketsController::class, 'index'])->middleware('auth')->name('tickets.index');
 Route::post('/tickets',[TicketsController::class, 'send'])->middleware('auth')->name('tickets.send');
+Route::get('/tickets/my',[TicketsController::class, 'myTickets'])->middleware('auth')->name('tickets.mytickets');
+Route::get('/tickets/view/{id}',[TicketsController::class, 'ticketView'])->middleware('auth')->name('tickets.ticketview');
+Route::post('/tickets/reply',[TicketsController::class, 'reply'])->middleware('auth')->name('tickets.reply');
 
 // Rankings
 Route::get('/rankings/woe',[GVGController::class, 'index'])->name('rankings.woe');

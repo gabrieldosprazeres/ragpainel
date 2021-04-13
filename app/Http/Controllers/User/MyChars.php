@@ -23,7 +23,8 @@ class MyChars extends Controller
         return view('user.mychars', [
             'user' => $request->user()->userid,
             'photo' => $request->user()->photo,
-            'chars' => $chars
+            'level' => $request->user()->group_id,
+            'chars' => $chars,
         ]);
     }
 

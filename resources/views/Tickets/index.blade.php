@@ -58,7 +58,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header card-header-icon" data-background-color="purple">
-                        <i class="material-icons">mail_outline</i>
+                        <i class="material-icons">support_agent</i>
                     </div>
                     <div class="card-content">
                         <h4 class="card-title">Enviar Ticket</h4>
