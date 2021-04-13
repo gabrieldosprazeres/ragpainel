@@ -106,6 +106,9 @@
                             <li>
                                 <a href="{{route('admin.managerban')}}">Gerenciar Banimentos</a>
                             </li>
+                            <li>
+                                <a href="{{route('admin.managertickets')}}">Gerenciar Tickets</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -265,7 +268,7 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
-                    <a href="http://www.creative-tim.com/">Creative Tim</a>, made with love for a better web
+                    <a href="http://www.creative-tim.com/">RSCODE</a>, Todos os direitos reservados
                 </p>
             </div>
         </footer>

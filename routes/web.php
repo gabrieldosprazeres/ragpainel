@@ -19,6 +19,7 @@ use App\Http\Controllers\Rankings\PVPController;
 use App\Http\Controllers\Rankings\EventController;
 use App\Http\Controllers\Database\DatabaseController;
 use App\Http\Controllers\Tickets\TicketsController;
+use App\Http\Controllers\Admin\ManagerTicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,3 +91,9 @@ Route::get('/admin/managerban',[ManagerBanController::class, 'index'])->middlewa
 Route::post('/admin/managerban/add',[ManagerBanController::class, 'add'])->middleware('auth', 'admin')->name('admin.managerban.add');
 Route::post('/admin/managerban/remove',[ManagerBanController::class, 'remove'])->middleware('auth', 'admin')->name('admin.managerban.remove');
 Route::post('/admin/managerban',[ManagerBanController::class, 'find'])->middleware('auth', 'admin')->name('admin.managerban.find');
+// Gerenciar Tickets.
+Route::get('/admin/managertickets',[ManagerTicketController::class, 'index'])->middleware('auth', 'admin')->name('admin.managertickets');
+Route::get('/admin/managertickets/view/{id}', [ManagerTicketController::class, 'view'])->middleware('auth', 'admin')->name('admin.managertickets.view');
+Route::match(['post', 'get'], '/admin/managertickets/close/{id}',[ManagerTicketController::class, 'close'])->middleware('auth', 'admin')->name('admin.managertickets.close');
+Route::match(['post', 'get'], '/admin/managertickets/open/{id}',[ManagerTicketController::class, 'open'])->middleware('auth', 'admin')->name('admin.managertickets.open');
+Route::post('/admin/managertickets/reply', [ManagerTicketController::class, 'reply'])->middleware('auth', 'admin')->name('admin.managertickets.reply');

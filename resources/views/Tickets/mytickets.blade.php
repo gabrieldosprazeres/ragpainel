@@ -90,7 +90,13 @@
                             <td>{{$ticket->id}}</td>
                             <td>{{$ticket->title}}</td>
                             <td>{{$ticket->category}}</td>
-                            <td><button class="btn btn-info btn-xs">{{$ticket->status}}</button></td>
+                            @if($ticket->status == "Aberto")
+                                <td><button class="btn btn-info btn-xs">{{$ticket->status}}</button></td>
+                            @elseif($ticket->status == "Atendimento")
+                                <td><button class="btn btn-success btn-xs">{{$ticket->status}}</button></td>
+                            @elseif($ticket->status == "Resolvido")
+                                <td><button class="btn btn-danger btn-xs">{{$ticket->status}}</button></td>
+                            @endif
                             <td>{{date('d-m-Y', strtotime($ticket->created_at))}} às {{date('H:m:i', strtotime($ticket->created_at))}}</td>
                             <td>{{date('d-m-Y', strtotime($ticket->updated_at))}} às {{date('H:m:i', strtotime($ticket->updated_at))}}</td>
                             <form method="get" action="{{route('tickets.ticketview', ['id' => $ticket->id])}}">

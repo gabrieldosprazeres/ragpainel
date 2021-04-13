@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', 'Ticket - '. $view->title)
-@section('description', $view->title)
+@section('title', 'Ticket - '. $ticket[0]->title)
+@section('description', $ticket[0]->title)
 
 @section('content')
 
@@ -24,17 +24,17 @@
         <ul class="timeline timeline-simple">
             <li class="timeline-inverted">
                 <div class="ticket-photo success">
-                    <img src="{{asset('assets/img/users')}}/{{$photo}}" />
+                    <img src="{{asset('assets/img/users')}}/{{$ticket[0]->photo}}" />
                 </div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <span class="label label-success">{{$view->login}}</span>
+                        <span class="label label-success">{{$ticket[0]->ticket_login}}</span>
                     </div>
                     <div class="timeline-body">
-                        @php echo nl2br($view->body); @endphp
+                        @php echo nl2br($ticket[0]->body); @endphp
                     </div>
                     <h6>
-                        <i class="ti-time"></i> Criado em {{date('d-m-Y', strtotime($view->created_at))}} às {{date('H:m:i', strtotime($view->created_at))}}
+                        <i class="ti-time"></i> Criado em {{date('d-m-Y', strtotime($ticket[0]->created_at))}} às {{date('H:m:i', strtotime($ticket[0]->created_at))}}
                     </h6>
                 </div>
             </li>
@@ -92,12 +92,12 @@
                 </li>
             @endforeach
         </ul>
-
-        @if($view->status != "Resolvido")
+        @if($ticket[0]->status != "Resolvido")
             <div class="col-md-11 pull-right reply-right">
-                <form method="post" action="{{route('tickets.reply', ['id' => $view->id])}}">
+                <form method="post" action="{{route('admin.managertickets.reply', ['id' => $ticket[0]->id])}}">
                     @csrf
                     <textarea name="body" class="form-control bodyfield"></textarea>
+                    <button type="submit" class="btn btn-danger pull-right" formaction="{{route('admin.managertickets.close', ['id' => $ticket[0]->id])}}">Fechar</button>
                     <button type="submit" class="btn btn-success pull-right">Responder</button>
                 </form>
             </div>
@@ -133,5 +133,7 @@
             convert_urls:false
         });
     </script>
+
+
 
 @endsection
