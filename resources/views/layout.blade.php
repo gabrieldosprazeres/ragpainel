@@ -268,7 +268,7 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
-                    <a href="http://www.creative-tim.com/">RSCODE</a>, Todos os direitos reservados
+                    <a href="https://www.rscode.com.br">RSCODE</a>, Todos os direitos reservados. Template feito por <a href="https://www.creative-tim.com/">CREATIVE TIM</a>. Painel desenvolvido por <a href="https://www.rscode.com.br">RSCODE</a>
                 </p>
             </div>
         </footer>
