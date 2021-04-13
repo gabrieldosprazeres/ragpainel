@@ -1,0 +1,212 @@
+@extends('layout')
+
+@section('title', 'Configurações do Painel')
+@section('description', 'Configurações do Painel')
+
+@section('content')
+
+    @if($errors->any())
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="alert alert-danger">
+                            <span>
+
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach</span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    @endif
+
+    @if(Session::has('custom_alert_success'))
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                                <span>
+                                {{ Session::get('custom_alert_success') }}
+                                    @php
+                                        Session::forget('custom_alert_success');
+                                    @endphp
+                                </span>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="purple">
+                        <i class="material-icons">settings</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Configurações Gerais
+                        </h4>
+                        <form method="post" action="{{route('admin.config.savegeneral')}}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Nome do Painel</label>
+                                            <input type="text" name="title" value="{{$configs['title']}}" class="form-control" minlength="4" maxlength="100" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Nome Mini (2 Letras)</label>
+                                            <input type="text" name="title_mini" value="{{$configs['title_mini']}}" class="form-control" minlength="2" maxlength="2" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Email</label>
+                                            <input type="email" name="email" value="{{$configs['email']}}" class="form-control" minlength="4" maxlength="100" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Discord</label>
+                                            <input type="text" name="discord" value="{{$configs['discord']}}" class="form-control" maxlength="100" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Facebook</label>
+                                            <input type="text" name="facebook" value="{{$configs['facebook']}}" class="form-control" maxlength="100" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary pull-right">Salvar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="green">
+                        <i class="material-icons">psychology</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Configurações VIP
+                        </h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Level do jogador VIP</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success pull-right">Salvar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="red">
+                        <i class="material-icons">manage_accounts</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Configurações Equipe
+                        </h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Level do Administrador</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Level do Game Master</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Level do Comunity Manager</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-danger pull-right">Salvar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="blue">
+                        <i class="material-icons">cable</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Configurações de Tickets
+                        </h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" value="Amsterdam,Washington,Sydney,Beijing" class="tagsinput" data-role="tagsinput" data-color="blue" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Nova Categoria</label>
+                                            <input type="text" class="form-control">
+                                            <button type="submit" class="btn btn-info pull-right">Adicionar</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <select class="selectpicker" data-style="btn btn-danger btn-round" title="Selecione a Categoria" data-size="2">
+                                                    <option value="2">Foobar</option>
+                                                    <option value="3">Is great</option>
+                                                </select>
+                                                <button type="submit" class="btn btn-danger pull-right">Remover</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+@endsection
