@@ -27,9 +27,9 @@ class ZenyController extends Controller
             ]);
         } else {
             return view('rankings.zeny', [
-                'user' => $request->user()->userid,
-                'photo' => $request->user()->photo,
-                'level' => $level,
+                'user' => null,
+                'photo' => null,
+                'level' => null,
                 'rankingZeny' => $rankingZeny,
                 'n' => $n
             ]);

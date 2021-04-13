@@ -26,9 +26,9 @@ class EventController extends Controller
             ]);
         } else {
             return view('rankings.event', [
-                'user' => $request->user()->userid,
-                'photo' => $request->user()->photo,
-                'level' => $level,
+                'user' => null,
+                'photo' => null,
+                'level' => null,
                 'rankingEvent' => $rankingEvent,
                 'n' => $n
             ]);
