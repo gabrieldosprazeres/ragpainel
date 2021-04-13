@@ -25,9 +25,9 @@ class PVPController extends Controller
             ]);
         } else {
             return view('rankings.pvp', [
-                'user' => $request->user()->userid,
-                'photo' => $request->user()->photo,
-                'level' => $level,
+                'user' => null,
+                'photo' => null,
+                'level' => null,
                 'rankingPVP' => $rankingPVP,
                 'n' => $n
             ]);

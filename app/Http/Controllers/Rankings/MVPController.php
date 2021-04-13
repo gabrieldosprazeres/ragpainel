@@ -27,9 +27,9 @@ class MVPController extends Controller
             ]);
         } else {
             return view('rankings.mvp', [
-                'user' => $request->user()->userid,
-                'photo' => $request->user()->photo,
-                'level' => $level,
+                'user' => null,
+                'photo' => null,
+                'level' => null,
                 'rankingMVP' => $rankingMVP,
                 'n' => $n
             ]);

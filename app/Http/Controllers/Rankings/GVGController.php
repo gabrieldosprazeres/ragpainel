@@ -25,9 +25,9 @@ class GVGController extends Controller
             ]);
         } else {
             return view('rankings.gvg', [
-                'user' => $request->user()->userid,
-                'photo' => $request->user()->photo,
-                'level' => $level,
+                'user' => null,
+                'photo' => null,
+                'level' => null,
                 'rankingGVG' => $rankingGVG,
                 'n' => $n
             ]);

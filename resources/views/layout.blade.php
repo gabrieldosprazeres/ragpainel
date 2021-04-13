@@ -75,14 +75,14 @@
 
             </div>
             <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
+                <li class="{{ (request()->is('/')) ? 'active' : '' }}">
+                    <a href="{{route('index')}}">
                         <i class="material-icons">home</i>
                         <p>Início</p>
                     </a>
                 </li>
                 @if($level == 99)
-                <li>
+                <li class="{{ (request()->is('admin/*')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#pagesExamples">
                         <i class="material-icons">security</i>
                         <p>Administração
@@ -91,29 +91,29 @@
                     </a>
                     <div class="collapse" id="pagesExamples">
                         <ul class="nav">
-                            <li>
+                            <li class="{{ (request()->is('admin/logs')) ? 'active' : '' }}">
                                 <a href="{{route('admin.logs')}}">Visualizar Logs</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('admin/managercash')) ? 'active' : '' }}">
                                 <a href="{{route('admin.managercash')}}">Gerenciar Créditos</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('admin/managervip')) ? 'active' : '' }}">
                                 <a href="{{route('admin.managervip')}}">Gerenciar VIP</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('admin/managerstaff')) ? 'active' : '' }}">
                                 <a href="{{route('admin.managerstaff')}}">Gerenciar Equipe</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('admin/managerban')) ? 'active' : '' }}">
                                 <a href="{{route('admin.managerban')}}">Gerenciar Banimentos</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('admin/managertickets')) ? 'active' : '' }}">
                                 <a href="{{route('admin.managertickets')}}">Gerenciar Tickets</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 @endif
-                <li>
+                <li class="{{ (request()->is('rankings/*')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#componentsExamples">
                         <i class="material-icons">emoji_events</i>
                         <p>Rankings
@@ -122,25 +122,25 @@
                     </a>
                     <div class="collapse" id="componentsExamples">
                         <ul class="nav">
-                            <li>
-                                <a href="{{route('rankings.woe')}}">Ranking de WOE</a>
+                            <li class="{{ (request()->is('rankings/woe')) ? 'active' : '' }}">
+                                <a href="{{route('rankings.woe')}}">Ranking da WOE</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('rankings/mvp')) ? 'active' : '' }}">
                                 <a href="{{route('rankings.mvp')}}">Ranking de MVP</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('rankings/zeny')) ? 'active' : '' }}">
                                 <a href="{{route('rankings.zeny')}}">Ranking de Zeny's</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('rankings/pvp')) ? 'active' : '' }}">
                                 <a href="{{route('rankings.pvp')}}">Ranking de PVP</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('rankings/event')) ? 'active' : '' }}">
                                 <a href="{{route('rankings.event')}}">Ranking de Eventos</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li class="{{ (request()->is('database/*')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#formsExamples">
                         <i class="material-icons">dns</i>
                         <p>Database
@@ -149,16 +149,16 @@
                     </a>
                     <div class="collapse" id="formsExamples">
                         <ul class="nav">
-                            <li>
+                            <li class="{{ (request()->is('database/item')) ? 'active' : '' }}">
                                 <a href="{{route('database.item')}}">Itens</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('database/monster')) ? 'active' : '' }}">
                                 <a href="{{route('database.monster')}}">Monstros</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li class="{{ (request()->is('tickets/*', 'tickets')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#ticket">
                         <i class="material-icons">support_agent</i>
                         <p>Suporte
@@ -167,16 +167,16 @@
                     </a>
                     <div class="collapse" id="ticket">
                         <ul class="nav">
-                            <li>
+                            <li class="{{ (request()->is('tickets')) ? 'active' : '' }}">
                                 <a href="{{route('tickets.index')}}">Enviar Ticket</a>
                             </li>
-                            <li>
+                            <li class="{{ (request()->is('tickets/my')) ? 'active' : '' }}">
                                 <a href="{{route('tickets.mytickets')}}">Visualizar Tickets</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li {{ (request()->is('configs')) ? 'active' : '' }}>
                     <a href="dashboard.html">
                         <i class="material-icons">settings</i>
                         <p>Configurações</p>
@@ -605,6 +605,150 @@
         } );
 
         $('#datatables7').DataTable( {
+            "pagingType": "full_numbers",
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            aaSorting: [],
+            "language": {
+                "sEmptyTable": "Nenhum registro encontrado",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "Mostrando _MENU_ resultados por página",
+                "sLoadingRecords": "Carregando...",
+                "sProcessing": "Processando...",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sSearch": "Pesquisar",
+                "oPaginate": {
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior",
+                    "sFirst": "Primeiro",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                },
+                "select": {
+                    "rows": {
+                        "_": "Selecionado %d linhas",
+                        "0": "Nenhuma linha selecionada",
+                        "1": "Selecionado 1 linha"
+                    }
+                },
+                "buttons": {
+                    "copy": "Copiar para a área de transferência",
+                    "copyTitle": "Cópia bem sucedida",
+                    "copySuccess": {
+                        "1": "Uma linha copiada com sucesso",
+                        "_": "%d linhas copiadas com sucesso"
+                    }
+                }
+            }
+        } );
+
+        $('#tickets').DataTable( {
+            "pagingType": "full_numbers",
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            aaSorting: [],
+            "language": {
+                "sEmptyTable": "Nenhum registro encontrado",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "Mostrando _MENU_ resultados por página",
+                "sLoadingRecords": "Carregando...",
+                "sProcessing": "Processando...",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sSearch": "Pesquisar",
+                "oPaginate": {
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior",
+                    "sFirst": "Primeiro",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                },
+                "select": {
+                    "rows": {
+                        "_": "Selecionado %d linhas",
+                        "0": "Nenhuma linha selecionada",
+                        "1": "Selecionado 1 linha"
+                    }
+                },
+                "buttons": {
+                    "copy": "Copiar para a área de transferência",
+                    "copyTitle": "Cópia bem sucedida",
+                    "copySuccess": {
+                        "1": "Uma linha copiada com sucesso",
+                        "_": "%d linhas copiadas com sucesso"
+                    }
+                }
+            }
+        } );
+
+        $('#tickets2').DataTable( {
+            "pagingType": "full_numbers",
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            aaSorting: [],
+            "language": {
+                "sEmptyTable": "Nenhum registro encontrado",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "Mostrando _MENU_ resultados por página",
+                "sLoadingRecords": "Carregando...",
+                "sProcessing": "Processando...",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sSearch": "Pesquisar",
+                "oPaginate": {
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior",
+                    "sFirst": "Primeiro",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                },
+                "select": {
+                    "rows": {
+                        "_": "Selecionado %d linhas",
+                        "0": "Nenhuma linha selecionada",
+                        "1": "Selecionado 1 linha"
+                    }
+                },
+                "buttons": {
+                    "copy": "Copiar para a área de transferência",
+                    "copyTitle": "Cópia bem sucedida",
+                    "copySuccess": {
+                        "1": "Uma linha copiada com sucesso",
+                        "_": "%d linhas copiadas com sucesso"
+                    }
+                }
+            }
+        } );
+
+        $('#tickets3').DataTable( {
             "pagingType": "full_numbers",
             "lengthMenu": [
                 [10, 25, 50, -1],

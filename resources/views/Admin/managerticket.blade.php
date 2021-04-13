@@ -68,7 +68,7 @@
                                     <div class="tab-pane active" id="pill1">
 
                                         <div class="material-datatables tablecenter">
-                                            <table id="tickets" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                            <table id="tickets2" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -110,7 +110,7 @@
                                     <div class="tab-pane active" id="pill1">
 
                                         <div class="material-datatables tablecenter">
-                                            <table id="tickets" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                            <table id="tickets3" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>

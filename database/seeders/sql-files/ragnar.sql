@@ -63,4 +63,3 @@ ALTER TABLE `login` ADD `photo` VARCHAR(200) NOT NULL DEFAULT 'default.png' AFTE
 ALTER TABLE `login` ADD `cash` INT( 11 ) NOT NULL DEFAULT '0';
 ALTER TABLE `char` ADD `eventos` INT( 11 ) NOT NULL DEFAULT '0';
 ALTER TABLE `char` ADD `mvps` INT( 11 ) NOT NULL DEFAULT '0';
-

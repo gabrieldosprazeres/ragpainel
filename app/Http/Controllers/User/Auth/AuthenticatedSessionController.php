@@ -53,6 +53,10 @@ class AuthenticatedSessionController extends Controller
 
         $id = User::where('userid', $request->input('userid'))->where('user_pass', $request->input('password'))->first();
 
+        if($id->state > 0){
+            return back()->with('custom_alert', 'Esta conta está banida.');
+        }
+
         if($id) {
             Auth::loginUsingId($id->account_id, $remember);
             $request->session()->regenerate();
