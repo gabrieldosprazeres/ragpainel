@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 
 <!-- Mirrored from demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 21:29:18 GMT -->
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/aple-icon.png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.ico')}}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>@yield('title')</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />

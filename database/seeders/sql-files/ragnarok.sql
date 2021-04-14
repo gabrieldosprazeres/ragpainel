@@ -52,12 +52,39 @@ CREATE TABLE `tickets_category` (
 `name` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `tickets_category` (`id`, `name`) VALUES
+(1, 'Doações'),
+(2, 'Suporte'),
+(3, 'Bug'),
+(4, 'Denúncia');
+
+CREATE TABLE `painel_configs` (
+`id` int(11) NOT NULL,
+`name` varchar(24) NOT NULL,
+`content` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `painel_configs` (`id`, `name`, `content`) VALUES
+(1, 'title', 'RS CODE - Painel'),
+(2, 'title_mini', 'RS'),
+(3, 'email', 'rsantos@rscode.com.br'),
+(4, 'discord', 'https://discord.gg/'),
+(5, 'facebook', 'https://www.facebook.com/'),
+(7, 'color', 'purple'),
+(8, 'colorbg', 'black'),
+(9, 'levelvip', '10'),
+(10, 'leveladm', '99'),
+(11, 'levelgm', '50'),
+(12, 'levelcm', '20');
+
 ALTER TABLE `tickets` ADD PRIMARY KEY (`id`);
 ALTER TABLE `tickets_category` ADD PRIMARY KEY (`id`);
 ALTER TABLE `tickets_replys` ADD PRIMARY KEY (`id`);
 ALTER TABLE `tickets` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tickets_replys` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tickets_category` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT; COMMIT;
+ALTER TABLE `painel_configs` ADD PRIMARY KEY (`id`);
+ALTER TABLE `painel_configs`MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13 COMMIT;
 ALTER TABLE `login` ADD `remember_token` varchar(100) DEFAULT NULL AFTER `user_pass`;
 ALTER TABLE `login` ADD `photo` VARCHAR(200) NOT NULL DEFAULT 'default.png' AFTER `remember_token`;
 ALTER TABLE `login` ADD `cash` INT( 11 ) NOT NULL DEFAULT '0';

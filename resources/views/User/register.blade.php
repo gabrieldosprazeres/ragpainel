@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}" />
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/aple-icon.png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.ico')}}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Registrar</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -33,17 +33,17 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="../dashboard.html">
+                    <a href="{{route('index')}}">
                         <i class="material-icons">house</i> INÍCIO
                     </a>
                 </li>
                 <li class="active">
-                    <a href="register.html">
+                    <a href="{{route('user.index.register')}}">
                         <i class="material-icons">person_add</i> REGISTRAR
                     </a>
                 </li>
                 <li class="">
-                    <a href="login.html">
+                    <a href="{{route('user.index.login')}}">
                         <i class="material-icons">person</i> LOGAR
                     </a>
                 </li>
@@ -138,17 +138,17 @@
         <nav class="pull-left">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{{route('index')}}">
                         Início
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('user.index.register')}}">
                         Registrar
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('user.index.login')}}">
                         Logar
                     </a>
                 </li>
@@ -158,7 +158,7 @@
             <script>
                 document.write(new Date().getFullYear())
             </script> &copy; Design criado por
-            <a href="http://www.creative-tim.com/">Creative Tim</a> e desenvolvido por <a href="https://www.rscode.com.br/">RS CODE</a>
+            <a href="https://www.rscode.com.br">RSCODE</a>, Todos os direitos reservados. Template feito por <a href="https://www.creative-tim.com/">CREATIVE TIM</a>. Painel desenvolvido por <a href="https://www.rscode.com.br">RSCODE</a>
         </p>
     </div>
 </footer>
