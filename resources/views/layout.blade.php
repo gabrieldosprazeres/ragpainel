@@ -161,6 +161,7 @@
                         </ul>
                     </div>
                 </li>
+                @if(Auth::check())
                 <li class="{{ (request()->is('tickets/*', 'tickets')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#ticket">
                         <i class="material-icons">support_agent</i>
@@ -179,7 +180,7 @@
                         </ul>
                     </div>
                 </li>
-
+                @endif
                 <li>
                     <a data-toggle="collapse" href="#mapsExamples">
                         <i class="material-icons">chat_bubble</i>
