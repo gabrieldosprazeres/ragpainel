@@ -200,7 +200,7 @@ $ git clone https://github.com/rscodexx/ragpainel.git
 
 # Ou baixe o projeto direto do repositório: https://github.com/rscodexx/ragpainel
 
-# Crie um novo banco de dados e importe o arquivo ragnarok.sql que está em:
+# Importe o arquivo ragnarok.sql no banco de dados do seu servidor que está em:
 $ ragpainel\database\seeders\sql-files
 
 # Renomeie o arquivo .env-example(está na pasta raiz do projeto) para .env e configure.
@@ -225,14 +225,25 @@ $ composer install
 
 ```
 
-
 #### 🧭 Rodando a aplicação web (Frontend)
 
 ```bash
 
 # Inicie o seu servidor, para acessar o painel é necessário acessar a pasta public, um exemplo abaixo:
 
-$http://localhost/ragpainel/public
+$ http://localhost/ragpainel/public
+
+# Você também pode rodar a aplicação sem precisar de um servidor apache configurado através do php artisan.
+
+# Acesse a pasta do projeto em seu terminal/cmd
+$ cd ragpainel
+
+# Digite o comando:
+$ php artisan serve
+
+# Basta clicar no link gerado para iniciar o painel, enquanto o CMD estiver aberto o servidor vai estar online.
+
+# Use o comando CTRL + C para desligar o servidor.
 
 ```
 
