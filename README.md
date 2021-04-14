@@ -241,7 +241,7 @@ $ cd ragpainel
 # Digite o comando:
 $ php artisan serve
 
-# Basta clicar no link gerado para iniciar o painel, enquanto o CMD estiver aberto o servidor vai estar online.
+# Basta clicar no link gerado para iniciar o painel.
 
 # Use o comando CTRL + C para desligar o servidor.
 
