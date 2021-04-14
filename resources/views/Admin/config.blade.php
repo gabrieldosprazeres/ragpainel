@@ -163,18 +163,18 @@
                     <div class="card-content">
                         <h4 class="card-title">Configurações VIP
                         </h4>
-                        <form>
+                        <form method="post" action="{{route('admin.config.savevip')}}">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Level do jogador VIP</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="levelvip" value="{{$configs['levelvip']}}" class="form-control" maxlength="2" required>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <button type="submit" class="btn btn-success pull-right">Salvar</button>
                             <div class="clearfix"></div>
                         </form>

@@ -33,6 +33,5 @@ class AppServiceProvider extends ServiceProvider
             $configs [ $dbconfig['name'] ] = $dbconfig['content'];
         }
         View()->share('configs', $configs);
-
     }
 }

@@ -99,6 +99,7 @@ Route::match(['post', 'get'], '/admin/managertickets/open/{id}',[ManagerTicketCo
 Route::post('/admin/managertickets/reply', [ManagerTicketController::class, 'reply'])->middleware('auth', 'admin')->name('admin.managertickets.reply');
 // Configurações do Painel
 Route::get('/admin/configs',[ConfigController::class, 'index'])->middleware('auth', 'admin')->name('admin.config');
-Route::post('/admin/savegeneral',[ConfigController::class, 'saveGeneral'])->middleware('auth', 'admin')->name('admin.config.savegeneral');
-Route::post('/admin/savecolor',[ConfigController::class, 'saveColor'])->middleware('auth', 'admin')->name('admin.config.savecolor');
-Route::post('/admin/savecolorbg',[ConfigController::class, 'saveColorBg'])->middleware('auth', 'admin')->name('admin.config.savecolorbg');
+Route::post('/admin/configs/savegeneral',[ConfigController::class, 'saveGeneral'])->middleware('auth', 'admin')->name('admin.config.savegeneral');
+Route::post('/admin/configs/savecolor',[ConfigController::class, 'saveColor'])->middleware('auth', 'admin')->name('admin.config.savecolor');
+Route::post('/admin/configs/savecolorbg',[ConfigController::class, 'saveColorBg'])->middleware('auth', 'admin')->name('admin.config.savecolorbg');
+Route::post('/admin/configs/savevip',[ConfigController::class, 'saveVip'])->middleware('auth', 'admin')->name('admin.config.savevip');

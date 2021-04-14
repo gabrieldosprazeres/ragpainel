@@ -77,4 +77,22 @@ class ConfigController extends Controller
 
         return back()->with('custom_alert_success', 'Cor de fundo atualizada com sucesso.');
     }
+
+    public function saveVip(Request $request)
+    {
+
+        $validator = Validator::make($request->only('levelvip'), [
+            'levelvip' => 'required|min:2|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/configs')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        Config::where('name', 'levelvip')->update(['content' => $request->input('levelvip')]);
+
+        return back()->with('custom_alert_success', 'Configuração atualizada com sucesso.');
+    }
 }
