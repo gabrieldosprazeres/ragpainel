@@ -135,7 +135,7 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
 
 ## 🎨 Layout
 
-### Celular
+### :iphone: Celular
 
 <p align="center">
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/mobile/01.jpg" width="200px">
@@ -145,7 +145,7 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/mobile/03.jpg" width="200px">
 </p>
 
-### Aplicativos Desktop
+### :computer: Desktop
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/desktop/01.png" width="400px">
