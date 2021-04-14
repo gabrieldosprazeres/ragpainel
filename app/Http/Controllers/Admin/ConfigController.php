@@ -30,7 +30,7 @@ class ConfigController extends Controller
         foreach ($dbconfigs as $dbconfig){
             $configs [ $dbconfig['name'] ] = $dbconfig['content'];
         }
-dd( $configs);
+        
         return view('admin.config', [
             'user' => $request->user()->userid,
             'photo' => $request->user()->photo,
