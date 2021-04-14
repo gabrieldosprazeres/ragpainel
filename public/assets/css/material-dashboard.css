@@ -6400,6 +6400,92 @@ h2.title {
   background-color: #e91e63;
   color: #FFFFFF;
 }
+
+.btn.btn-green, .btn.btn-green:hover, .btn.btn-green:focus, .btn.btn-green:active, .btn.btn-green.active, .btn.btn-green:active:focus, .btn.btn-green:active:hover, .btn.btn-green.active:focus, .btn.btn-green.active:hover, .open > .btn.btn-green.dropdown-toggle, .open > .btn.btn-green.dropdown-toggle:focus, .open > .btn.btn-green.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-green,
+.navbar .navbar-nav > li > a.btn.btn-green:hover,
+.navbar .navbar-nav > li > a.btn.btn-green:focus,
+.navbar .navbar-nav > li > a.btn.btn-green:active,
+.navbar .navbar-nav > li > a.btn.btn-green.active,
+.navbar .navbar-nav > li > a.btn.btn-green:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-green:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-green.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-green.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-green.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-green.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-green.dropdown-toggle:hover {
+    background-color: #4caf50;
+    color: #FFFFFF;
+}
+
+.btn.btn-orange, .btn.btn-orange:hover, .btn.btn-orange:focus, .btn.btn-orange:active, .btn.btn-orange.active, .btn.btn-orange:active:focus, .btn.btn-orange:active:hover, .btn.btn-orange.active:focus, .btn.btn-orange.active:hover, .open > .btn.btn-orange.dropdown-toggle, .open > .btn.btn-orange.dropdown-toggle:focus, .open > .btn.btn-orange.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-orange,
+.navbar .navbar-nav > li > a.btn.btn-orange:hover,
+.navbar .navbar-nav > li > a.btn.btn-orange:focus,
+.navbar .navbar-nav > li > a.btn.btn-orange:active,
+.navbar .navbar-nav > li > a.btn.btn-orange.active,
+.navbar .navbar-nav > li > a.btn.btn-orange:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-orange:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-orange.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-orange.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-orange.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-orange.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-orange.dropdown-toggle:hover {
+    background-color: #ff9800;
+    color: #FFFFFF;
+}
+
+.btn.btn-red, .btn.btn-red:hover, .btn.btn-red:focus, .btn.btn-red:active, .btn.btn-red.active, .btn.btn-red:active:focus, .btn.btn-red:active:hover, .btn.btn-red.active:focus, .btn.btn-red.active:hover, .open > .btn.btn-red.dropdown-toggle, .open > .btn.btn-red.dropdown-toggle:focus, .open > .btn.btn-red.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-red,
+.navbar .navbar-nav > li > a.btn.btn-red:hover,
+.navbar .navbar-nav > li > a.btn.btn-red:focus,
+.navbar .navbar-nav > li > a.btn.btn-red:active,
+.navbar .navbar-nav > li > a.btn.btn-red.active,
+.navbar .navbar-nav > li > a.btn.btn-red:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-red:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-red.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-red.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-red.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-red.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-red.dropdown-toggle:hover {
+    background-color: #f44336;
+    color: #FFFFFF;
+}
+
+.btn.btn-blue, .btn.btn-blue:hover, .btn.btn-blue:focus, .btn.btn-blue:active, .btn.btn-blue.active, .btn.btn-blue:active:focus, .btn.btn-blue:active:hover, .btn.btn-blue.active:focus, .btn.btn-blue.active:hover, .open > .btn.btn-blue.dropdown-toggle, .open > .btn.btn-blue.dropdown-toggle:focus, .open > .btn.btn-blue.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-blue,
+.navbar .navbar-nav > li > a.btn.btn-blue:hover,
+.navbar .navbar-nav > li > a.btn.btn-blue:focus,
+.navbar .navbar-nav > li > a.btn.btn-blue:active,
+.navbar .navbar-nav > li > a.btn.btn-blue.active,
+.navbar .navbar-nav > li > a.btn.btn-blue:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-blue:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-blue.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-blue.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-blue.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-blue.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-blue.dropdown-toggle:hover {
+    background-color: #00bcd4;
+    color: #FFFFFF;
+}
+
+.btn.btn-purple, .btn.btn-purple:hover, .btn.btn-purple:focus, .btn.btn-purple:active, .btn.btn-purple.active, .btn.btn-purple:active:focus, .btn.btn-purple:active:hover, .btn.btn-purple.active:focus, .btn.btn-purple.active:hover, .open > .btn.btn-purple.dropdown-toggle, .open > .btn.btn-purple.dropdown-toggle:focus, .open > .btn.btn-purple.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-purple,
+.navbar .navbar-nav > li > a.btn.btn-purple:hover,
+.navbar .navbar-nav > li > a.btn.btn-purple:focus,
+.navbar .navbar-nav > li > a.btn.btn-purple:active,
+.navbar .navbar-nav > li > a.btn.btn-purple.active,
+.navbar .navbar-nav > li > a.btn.btn-purple:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-purple:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-purple.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-purple.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-purple.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-purple.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-purple.dropdown-toggle:hover {
+    background-color: #9c27b0;
+    color: #FFFFFF;
+}
+
 .btn.btn-rose:focus, .btn.btn-rose:active, .btn.btn-rose:hover,
 .navbar .navbar-nav > li > a.btn.btn-rose:focus,
 .navbar .navbar-nav > li > a.btn.btn-rose:active,
@@ -9254,7 +9340,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-  background-color: #9c27b0;
+  background-color: gray;
   border-color: #9c27b0;
   color: #FFFFFF;
   box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
@@ -9358,6 +9444,23 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .nav-pills.nav-pills-rose > li.active > a, .nav-pills.nav-pills-rose > li.active > a:focus, .nav-pills.nav-pills-rose > li.active > a:hover {
   background-color: #e91e63;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+}
+
+.nav-pills.nav-pills-blue > li.active > a, .nav-pills.nav-pills-info > li.active > a:focus, .nav-pills.nav-pills-info > li.active > a:hover {
+    background-color: #00bcd4;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+}
+.nav-pills.nav-pills-green > li.active > a, .nav-pills.nav-pills-success > li.active > a:focus, .nav-pills.nav-pills-success > li.active > a:hover {
+    background-color: #4caf50;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
+}
+.nav-pills.nav-pills-orange > li.active > a, .nav-pills.nav-pills-warning > li.active > a:focus, .nav-pills.nav-pills-warning > li.active > a:hover {
+    background-color: #ff9800;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+}
+.nav-pills.nav-pills-red > li.active > a, .nav-pills.nav-pills-danger > li.active > a:focus, .nav-pills.nav-pills-danger > li.active > a:hover {
+    background-color: #f44336;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
 }
 
 .tab-space {
@@ -11608,8 +11711,28 @@ footer .btn {
     padding-bottom: 3%;
 }
 
-.tablecenter th {
-    color: purple;
+.color-green th {
+    color: #4caf50;
+}
+
+.color-orange th {
+    color: #ff9800;
+}
+
+.color-red th {
+    color: #f44336;
+}
+
+.color-rose th {
+    color: #e91e63;
+}
+
+.color-blue th {
+    color: #00bcd4;
+}
+
+.color-purple th {
+    color: #9c27b0;
 }
 
 .tablecenter td, th {
@@ -11619,10 +11742,6 @@ footer .btn {
 .tablecenter img {
     width: 30px;
     height: 30px;
-}
-
-.tablecentericon th {
-    color: purple;
 }
 
 .tablecentericon td, th {

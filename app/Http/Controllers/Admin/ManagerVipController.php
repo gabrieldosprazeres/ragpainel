@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Config;
 use Illuminate\Http\Request;
 use App\Http\Controllers\User\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Auth;
@@ -44,9 +45,11 @@ class ManagerVipController extends Controller
 
         $user = User::where('userid', $request->input('login'))->first();
 
+        $level = Config::select('content')->where('name', 'levelvip')->first();
+
         if($user) {
-            $user->vip_time += $request->vipadd*86400000;
-            $user->group_id = 5;
+            $user->vip_time += $request->vipadd*864000;
+            $user->group_id = $level->content;
             $user->save();
             return back()->with('custom_alert_success', 'Dias VIP adicionados com sucesso na conta: '.$request->input('login').'.');
         } else {
@@ -103,7 +106,7 @@ class ManagerVipController extends Controller
                 'photo' => $request->user()->photo,
                 'level' => $request->user()->group_id,
                 'findlogin' => $user->userid,
-                'findvip' => intval($user->vip_time/86400000)
+                'findvip' => intval($user->vip_time/864000)
             ]);
         } else {
             return back()->with('custom_alert', 'Usuário não encontrado.');

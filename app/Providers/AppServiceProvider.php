@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
+use App\Models\Config;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $configs = [];
 
+        $dbconfigs = Config::all();
+
+        foreach ($dbconfigs as $dbconfig){
+            $configs [ $dbconfig['name'] ] = $dbconfig['content'];
+        }
+        View()->share('configs', $configs);
     }
 }

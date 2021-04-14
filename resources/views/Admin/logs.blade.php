@@ -10,8 +10,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-content">
-                        <ul class="nav nav-pills nav-pills-purple">
-                            <li class="active">
+                        <ul class="nav nav-pills nav-pills-{{$configs['color']}}">
+                            <li class="active" >
                                 <a href="#pill1" data-toggle="tab">PvP</a>
                             </li>
                             <li>
@@ -35,7 +35,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="pill1">
 
-                                <div class="material-datatables tablecenter">
+                                <div class="material-datatables tablecenter color-{{$configs['color']}}">
                                     <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                         <tr>

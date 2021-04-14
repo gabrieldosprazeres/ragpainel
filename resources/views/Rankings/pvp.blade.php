@@ -6,12 +6,12 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header card-header-icon" data-background-color="purple">
+        <div class="card-header card-header-icon" data-background-color="{{$configs['color']}}">
             <i class="material-icons">emoji_events</i>
         </div>
         <div class="card-content">
             <h4 class="card-title">TOP <b>50</b> melhores jogadores do PVP</h4>
-            <div class="table-responsive tablecenter">
+            <div class="table-responsive tablecenter color-{{$configs['color']}}">
                 <table class="table">
                     <thead class="text-primary">
                     <th>Posição</th>
