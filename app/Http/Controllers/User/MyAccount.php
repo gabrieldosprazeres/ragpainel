@@ -41,7 +41,7 @@ class MyAccount extends Controller
         }
 
         $imageName = time().'.'.$request->myPhoto->extension();
-        $request->myPhoto->move(public_path('assets\img\users'), $imageName);
+        $request->myPhoto->move('assets/img/users', $imageName);
         $img = User::where('userid', $request->user()->userid)->first();
         $img->photo = $imageName;
         $img->save();
@@ -52,10 +52,6 @@ class MyAccount extends Controller
 
     public function update(Request $request)
     {
-
-        if($request->user()->userid != $request->input('login')){
-            return back()->with('custom_alert_danger','O seu login não pode ser modificado.');
-        }
 
         $validator = Validator::make($request->only('email', 'password', 'password_confirmation'), [
             'email' => 'required',
