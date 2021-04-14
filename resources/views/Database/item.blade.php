@@ -55,7 +55,7 @@
                         <tr>
                             <td>{{$item->id}}</td>
                             <td><img src="{{asset('assets/img/database/itens/icons')}}/{{$item->id}}.png"> {{$item->name_japanese}}</td>
-                            <td>{{$type_itens[$item->type]}}</td>
+                            <td>{{ empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] }}</td>
                             <td><button class="btn btn-{{$configs['color']}} btn-xs" data-toggle="modal" data-target="#myModal{{$item->id}}">Visualizar</button></td>
                         </tr>
 
@@ -73,18 +73,26 @@
                                     </div>
                                     <div class="modal-body">
                                         <p><span>Nome:</span> {{$item->name_japanese}}</p>
-                                        <p><span>Tipo:</span> {{$type_itens[$item->type]}}</p>
+                                        <p><span>Tipo:</span> {{( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] )}}</p>
                                         <p><span>Valor de Compra:</span> {{$item->price_buy}}</p>
                                         <p><span>Valor de Venda:</span> {{$item->price_sell}}</p>
                                         <p><span>Peso:</span> {{$item->weight}}</p>
-                                        @if($type_itens[$item->type] == "Armadura" | $type_itens[$item->type] == "Arma")
+                                        @if(
+                                            ( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] ) == "Armadura" | 
+                                            ( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] ) == "Arma")  | 
+                                            ( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] ) == "Armor" | 
+                                            ( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] ) == "Weapon")  | 
+
                                             <p><span>Defesa:</span> {{$item->defence}}</p>
                                             <p><span>ATK/MATK:</span> {{$item->atk}}/{{$item->matk}}</p>
                                             <p><span>Slots:</span> {{$item->slots}}</span></p>
                                             <p><span>Equipa em:</span> {{$equipIn[$item->equip_locations]}}</p>
                                         @endif
 
-                                        @if($type_itens[$item->type] == "Arma")
+                                        @if(
+                                            ( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] ) == "Arma" |
+                                            ( empty($type_itens[$item->type]) ? $item->type : $type_itens[$item->type] ) == "Weapon" 
+                                        )
                                             <p><span>Nível da Arma:</span> {{$item->atk}}/{{$item->matk}}</p>
                                         @endif
                                         @if($item->equip_level_min != 0)
