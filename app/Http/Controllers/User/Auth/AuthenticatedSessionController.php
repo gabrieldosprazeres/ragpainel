@@ -53,6 +53,10 @@ class AuthenticatedSessionController extends Controller
 
         $id = User::where('userid', $request->input('userid'))->where('user_pass', $request->input('password'))->first();
 
+        if(is_null($id)){
+            return back()->with('custom_alert', 'Eestá conta não exite.');
+        }
+
         if($id->state > 0){
             return back()->with('custom_alert', 'Esta conta está banida.');
         }
