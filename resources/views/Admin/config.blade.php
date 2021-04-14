@@ -24,6 +24,21 @@
 
     @endif
 
+    @if(Session::has('custom_alert'))
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                                <span>
+                                {{ Session::get('custom_alert') }}
+                                    @php
+                                        Session::forget('custom_alert');
+                                    @endphp
+                                </span>
+                </div>
+            </div>
+        </div>
+    @endif
+
     @if(Session::has('custom_alert_success'))
         <div class="row">
             <div class="col-md-12">
@@ -234,35 +249,41 @@
                     <div class="card-content">
                         <h4 class="card-title">Configurações de Tickets
                         </h4>
-                        <form>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" value="Amsterdam,Washington,Sydney,Beijing" class="tagsinput" data-role="tagsinput" data-color="blue" />
+
+                                                <input type="text" value="@foreach($categorys as $category) {{$category->name}}, @endforeach" class="tagsinput" data-role="tagsinput" data-color="blue" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Nova Categoria</label>
-                                            <input type="text" class="form-control">
-                                            <button type="submit" class="btn btn-info pull-right">Adicionar</button>
-                                        </div>
+                                        <form method="post" action="{{route('admin.config.addcategory')}}">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label class="control-label">Nova Categoria</label>
+                                                <input type="text" name="addcategory" class="form-control" required>
+                                                <button type="submit" class="btn btn-info pull-right">Adicionar</button>
+                                            </div>
+                                        </form>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <select class="selectpicker" data-style="btn btn-danger btn-round" title="Selecione a Categoria" data-size="2">
-                                                    <option value="2">Foobar</option>
-                                                    <option value="3">Is great</option>
-                                                </select>
-                                                <button type="submit" class="btn btn-danger pull-right">Remover</button>
-                                            </div>
+                                            <form method="post" action="{{route('admin.config.removecategory')}}">
+                                            @csrf
+                                                <div class="form-group">
+                                                    <select class="selectpicker" name="removecategory" data-style="btn btn-danger btn-round" title="Selecione a Categoria" data-size="7">
+                                                    @foreach($categorys as $category)
+                                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @endforeach
+                                                    </select>
+                                                    <button type="submit" class="btn btn-danger pull-right">Remover</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

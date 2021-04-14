@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\TicketsCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\User\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,8 @@ class ConfigController extends Controller
 {
     public function index(Request $request)
     {
+        $categorys = TicketsCategory::all();
+
         $configs = [];
 
         $dbconfigs = Config::get();
@@ -32,7 +35,8 @@ class ConfigController extends Controller
             'user' => $request->user()->userid,
             'photo' => $request->user()->photo,
             'level' => $request->user()->group_id,
-            'configs' => $configs
+            'configs' => $configs,
+            'categorys' => $categorys
         ]);
     }
 
@@ -119,6 +123,41 @@ class ConfigController extends Controller
 
         return back()->with('custom_alert_success', 'Configurações atualizadas com sucesso.');
 
+
+    }
+
+    public function addCategory(Request $request)
+    {
+        $validator = Validator::make($request->only('addcategory'), [
+            'addcategory' => 'required|unique:tickets_category,name',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/configs')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $category = new TicketsCategory;
+        $category->name = $request->input('addcategory');
+        $category->save();
+
+        return back()->with('custom_alert_success', 'Categoria adicionada com sucesso.');
+
+    }
+
+    public function removeCategory(Request $request)
+    {
+
+        if($request->input('removecategory') == null){
+
+            return back()->with('custom_alert', 'Selecione uma categoria.');
+        }
+
+        $category = TicketsCategory::find($request->input('removecategory'));
+        $category->delete();
+
+        return back()->with('custom_alert', 'Categoria deletada com sucesso.');
 
     }
 }

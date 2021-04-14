@@ -104,3 +104,5 @@ Route::post('/admin/configs/savecolor',[ConfigController::class, 'saveColor'])->
 Route::post('/admin/configs/savecolorbg',[ConfigController::class, 'saveColorBg'])->middleware('auth', 'admin')->name('admin.config.savecolorbg');
 Route::post('/admin/configs/savevip',[ConfigController::class, 'saveVip'])->middleware('auth', 'admin')->name('admin.config.savevip');
 Route::post('/admin/configs/savestaff',[ConfigController::class, 'saveStaff'])->middleware('auth', 'admin')->name('admin.config.savestaff');
+Route::post('/admin/configs/categorys/add',[ConfigController::class, 'addCategory'])->middleware('auth', 'admin')->name('admin.config.addcategory');
+Route::post('/admin/configs/categorys/remove',[ConfigController::class, 'removeCategory'])->middleware('auth', 'admin')->name('admin.config.removecategory');
