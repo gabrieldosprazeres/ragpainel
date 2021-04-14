@@ -41,7 +41,7 @@ class MyAccount extends Controller
         }
 
         $imageName = time().'.'.$request->myPhoto->extension();
-        $request->myPhoto->move(public_path('assets\img\users'), $imageName);
+        $request->myPhoto->move('assets/img/users', $imageName);
         $img = User::where('userid', $request->user()->userid)->first();
         $img->photo = $imageName;
         $img->save();
