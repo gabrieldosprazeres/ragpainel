@@ -97,6 +97,66 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="orange">
+                        <i class="material-icons">palette</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Cor do Painel
+                        </h4>
+                        <form method="post"">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary" formaction="{{route('admin.config.savecolor', ['color' => 'purple'])}}">Roxo</button>
+                                            <button type="submit" class="btn btn-success" formaction="{{route('admin.config.savecolor', ['color' => 'green'])}}">Verde</button>
+                                            <button type="submit" class="btn btn-info" formaction="{{route('admin.config.savecolor', ['color' => 'blue'])}}">Azul</button>
+                                            <button type="submit" class="btn btn-warning" formaction="{{route('admin.config.savecolor', ['color' => 'orange'])}}">Amarelo</button>
+                                            <button type="submit" class="btn btn-danger" formaction="{{route('admin.config.savecolor', ['color' => 'red'])}}">Vermelho</button>
+                                            <button type="submit" class="btn btn-rose" formaction="{{route('admin.config.savecolor', ['color' => 'rose'])}}">Rosa</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">colorize</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Cor de Fundo
+                        </h4>
+                        <form method="post"">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-default" formaction="{{route('admin.config.savecolorbg', ['colorbg' => 'white'])}}">Branco</button>
+                                        <button type="submit" class="btn btn-github" formaction="{{route('admin.config.savecolorbg', ['colorbg' => 'black'])}}">Preto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
                     <div class="card-header card-header-icon" data-background-color="green">
                         <i class="material-icons">psychology</i>
                     </div>

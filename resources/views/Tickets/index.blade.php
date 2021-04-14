@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header card-header-icon" data-background-color="purple">
+                    <div class="card-header card-header-icon" data-background-color="{{$configs['color']}}">
                         <i class="material-icons">support_agent</i>
                     </div>
                     <div class="card-content">
@@ -74,7 +74,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-3">
-                                    <select class="selectpicker" name="category" data-style="btn btn-primary btn-round" title="Selecione a Categoria" data-size="7">
+                                    <select class="selectpicker" name="category" data-style="btn btn-{{$configs['color']}} .color-orange btn-round" title="Selecione a Categoria" data-size="7">
                                         @foreach($categorys as $category)
                                         <option value="{{$category->name}}">{{$category->name}}</option>
                                         @endforeach
@@ -84,7 +84,7 @@
 
                             <textarea name="body" class="form-control bodyfield"></textarea>
 
-                            <button type="submit" class="btn btn-primary pull-right">Enviar</button>
+                            <button type="submit" class="btn btn-{{$configs['color']}} pull-right">Enviar</button>
                         </form>
                     </div>
                 </div>

@@ -75,7 +75,7 @@
 
     <div class="col-lg-4 col-md-12">
         <div class="card">
-            <div class="card-header card-header-text" data-background-color="purple">
+            <div class="card-header card-header-text" data-background-color="{{$configs['color']}}">
                 <h4 class="card-title">TOP PVP</h4>
                 <p class="category">Os 3 melhores jogadores do pvp.</p>
             </div>
@@ -105,7 +105,7 @@
 
     <div class="col-lg-4 col-md-12">
         <div class="card">
-            <div class="card-header card-header-text" data-background-color="purple">
+            <div class="card-header card-header-text" data-background-color="{{$configs['color']}}">
                 <h4 class="card-title">TOP WOE</h4>
                 <p class="category">Os 3 melhores jogadores da woe.</p>
             </div>
@@ -133,7 +133,7 @@
 
     <div class="col-lg-4 col-md-12">
         <div class="card">
-            <div class="card-header card-header-text" data-background-color="purple">
+            <div class="card-header card-header-text" data-background-color="{{$configs['color']}}">
                 <h4 class="card-title">TOP MVP</h4>
                 <p class="category">Os 3 melhores jogadores.</p>
             </div>

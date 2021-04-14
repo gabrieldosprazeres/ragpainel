@@ -100,3 +100,5 @@ Route::post('/admin/managertickets/reply', [ManagerTicketController::class, 'rep
 // Configurações do Painel
 Route::get('/admin/configs',[ConfigController::class, 'index'])->middleware('auth', 'admin')->name('admin.config');
 Route::post('/admin/savegeneral',[ConfigController::class, 'saveGeneral'])->middleware('auth', 'admin')->name('admin.config.savegeneral');
+Route::post('/admin/savecolor',[ConfigController::class, 'saveColor'])->middleware('auth', 'admin')->name('admin.config.savecolor');
+Route::post('/admin/savecolorbg',[ConfigController::class, 'saveColorBg'])->middleware('auth', 'admin')->name('admin.config.savecolorbg');

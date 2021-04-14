@@ -24,7 +24,7 @@
 
 <body>
 <div class="wrapper">
-    <div class="sidebar" data-active-color="purple" data-background-color="black" data-image="{{asset('assets/img/menu/poster_1.jpg')}}">
+    <div class="sidebar" data-active-color="{{$configs['color']}}" data-background-color="{{$configs['colorbg']}}" data-image="{{asset('assets/img/menu/poster_1.jpg')}}">
         <!--
     Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
     Tip 2: you can also add an image using data-image tag

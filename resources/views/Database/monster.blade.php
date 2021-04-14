@@ -25,7 +25,7 @@
     @endif
 
     <div class="card">
-        <div class="card-header card-header-icon" data-background-color="purple">
+        <div class="card-header card-header-icon" data-background-color="{{$configs['color']}}">
             <i class="material-icons">dns</i>
         </div>
         <div class="card-content">
@@ -38,7 +38,7 @@
                                 @csrf
                                 <label class="control-label">Pesquisar Nome</label>
                                 <input type="text" name="monsterSearch" class="form-control">
-                                <button type="submit" class="btn btn-primary btn-xs pull-right">Pesquisar</button>
+                                <button type="submit" class="btn btn-{{$configs['color']}} btn-xs pull-right">Pesquisar</button>
                             </form>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             <td>{{$monster->iName}}</td>
                             <td>{{$monster_size[$monster->Scale]}}</td>
                             <td>{{$monster_element[substr($monster->Element, 1, 1)]}}</td>
-                            <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal{{$monster->ID}}">Visualizar</button></td>
+                            <td><button class="btn btn-{{$configs['color']}} btn-xs" data-toggle="modal" data-target="#myModal{{$monster->ID}}">Visualizar</button></td>
                         </tr>
 
                         <!-- Modal Itens -->

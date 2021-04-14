@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-content">
-                        <ul class="nav nav-pills nav-pills-purple">
+                        <ul class="nav nav-pills nav-pills-{{$configs['color']}}">
                             <li class="active">
                                 <a href="#pill1" data-toggle="tab">Abertos</a>
                             </li>

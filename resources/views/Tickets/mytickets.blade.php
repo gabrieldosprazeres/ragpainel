@@ -66,7 +66,7 @@
     @endif
 
     <div class="card">
-        <div class="card-header card-header-icon" data-background-color="purple">
+        <div class="card-header card-header-icon" data-background-color="{{$configs['color']}}">
             <i class="material-icons">support_agent</i>
         </div>
         <div class="card-content">
@@ -101,7 +101,7 @@
                             <td>{{date('d-m-Y', strtotime($ticket->updated_at))}} às {{date('H:m:i', strtotime($ticket->updated_at))}}</td>
                             <form method="get" action="{{route('tickets.ticketview', ['id' => $ticket->id])}}">
                                 @csrf
-                            <td><button type="submit" class="btn btn-success btn-xs">Visualizar</button></td>
+                            <td><button type="submit" class="btn btn-{{$configs['color']}} btn-xs">Visualizar</button></td>
                             </form>
 
                         </tr>

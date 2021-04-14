@@ -61,4 +61,20 @@ class ConfigController extends Controller
 
         return back()->with('custom_alert_success', 'Configurações atualizadas com sucesso.');
     }
+
+    public function saveColor(Request $request)
+    {
+
+        Config::where('name', 'color')->update(['content' => $request->query('color')]);
+
+        return back()->with('custom_alert_success', 'Cor atualizada com sucesso.');
+    }
+
+    public function saveColorBg(Request $request)
+    {
+
+        Config::where('name', 'colorbg')->update(['content' => $request->query('colorbg')]);
+
+        return back()->with('custom_alert_success', 'Cor de fundo atualizada com sucesso.');
+    }
 }
