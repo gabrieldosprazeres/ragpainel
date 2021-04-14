@@ -44,6 +44,8 @@
 
 RagPainel - É um painel de controle desenvolvido para gerenciar contas e personagens de ragnarok online.
 
+## 🎬 <a href="https://rscode.com.br/ragpainel">Demonstração</a>
+
 ---
 
 ## ⚙️ Funcionalidades
