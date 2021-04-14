@@ -176,121 +176,64 @@ As seguintes ferramentas foram usadas na construção do projeto:
 :heavy_check_mark: Tokenizer PHP Extensão ativa<br>
 :heavy_check_mark: XML PHP Extensão ativa<br>
 
-💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
+---
+
+## :large_blue_circle: Instalação no Windows.
 
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+[GIT](https://git-scm.com/download/win), [Apache](https://httpd.apache.org/docs/2.4/platform/windows.html), [Mysql](https://dev.mysql.com/downloads/installer/) (Ou qualquer outro tipo de banco de dados), [Composer](https://getcomposer.org/download/)
+
+Se você não sabe instalar e configurar um ambiente de servidor, pode utilizar ferramentas que já vem tudo pronto como:
+[Apache](https://www.apachefriends.org/pt_br/download.html) [Wamp](https://www.wampserver.com/en/)
+
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 #### 🎲 Rodando o Backend (servidor)
 
 ```bash
 
-# Clone este repositório
-$ git clone git@github.com:tgmarinho/README-ecoleta.git
+# Clone este projeto
+$ git clone https://github.com/rscodexx/ragpainel.git
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd README-ecoleta
+# Ou baixe o projeto direto do repositório: https://github.com/rscodexx/ragpainel/archive/refs/heads/master.zip
 
-# Vá para a pasta server
-$ cd server
+# Crie um novo banco de dados e importe o arquivo ragnarok.sql que está em:
+$ ragpainel\database\seeders\sql-files
 
-# Instale as dependências
-$ npm install
+# Renomeie o arquivo .env-example(está na pasta raiz do projeto) para .env e configure.
 
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+DB_CONNECTION=mysql #Tipo de banco de dados.
+DB_HOST=127.0.0.1 #IP do banco de dados.
+DB_PORT=3306 #Porta do banco de dados.
+DB_DATABASE=ragpainel #Tabela do banco de dados.
+DB_USERNAME=ragnarok #Usuário do banco de dados
+DB_PASSWORD=ragnarok #Senha do banco de dados.
+TIMEZONE=America/Sao_Paulo #Horário
+LOCALE=pt-BR #Idioma geral.
+FALLBACK_LOCALE=pt-BR #Idioma das mensagens de erro.
 
-# O servidor inciará na porta:3333 - acesse http://localhost:3333 
+# Acesse a pasta do projeto em seu terminal/cmd
+$ cd ragpainel
+
+# Após entrar no diretório do projeto instale o composer e suas dependências.
+$ composer install
+
+# Aguarde a instalação e pronto, seu servidor já está configurado para rodar o projeto.
 
 ```
-<p align="center">
-  <a href="https://github.com/tgmarinho/README-ecoleta/blob/master/Insomnia_API_Ecoletajson.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
-</p>
 
 
 #### 🧭 Rodando a aplicação web (Frontend)
 
 ```bash
 
-# Clone este repositório
-$ git clone git@github.com:tgmarinho/README-ecoleta.git
+# Inicie o seu servidor, para acessar o painel é necessário acessar a pasta public, um exemplo abaixo:
 
-# Acesse a pasta do projeto no seu terminal/cmd
-$ cd README-ecoleta
-
-# Vá para a pasta da aplicação Front End
-$ cd web
-
-# Instale as dependências
-$ npm install
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run start
-
-# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+$http://localhost/ragpainel/public
 
 ```
-
----
-
-## 🛠 Tecnologias
-
-As seguintes ferramentas foram usadas na construção do projeto:
-
-#### **Website**  ([React](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
-
--   **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
--   **[React Icons](https://react-icons.github.io/react-icons/)**
--   **[Axios](https://github.com/axios/axios)**
--   **[Leaflet](https://react-leaflet.js.org/en/)**
--   **[React Leaflet](https://react-leaflet.js.org/)**
--   **[React Dropzone](https://github.com/react-dropzone/react-dropzone)**
-
-> Veja o arquivo  [package.json](https://github.com/tgmarinho/README-ecoleta/blob/master/web/package.json)
-
-#### [](https://github.com/tgmarinho/Ecoleta#server-nodejs--typescript)**Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
-
--   **[Express](https://expressjs.com/)**
--   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
--   **[KnexJS](http://knexjs.org/)**
--   **[SQLite](https://github.com/mapbox/node-sqlite3)**
--   **[ts-node](https://github.com/TypeStrong/ts-node)**
--   **[dotENV](https://github.com/motdotla/dotenv)**
--   **[Multer](https://github.com/expressjs/multer)**
--   **[Celebrate](https://github.com/arb/celebrate)**
--   **[Joi](https://github.com/hapijs/joi)**
-
-> Veja o arquivo  [package.json](https://github.com/tgmarinho/README-ecoleta/blob/master/server/package.json)
-
-#### [](https://github.com/tgmarinho/Ecoleta#mobile-react-native--typescript)**Mobile**  ([React Native](http://www.reactnative.com/)  +  [TypeScript](https://www.typescriptlang.org/))
-
--   **[Expo](https://expo.io/)**
--   **[Expo Google Fonts](https://github.com/expo/google-fonts)**
--   **[React Navigation](https://reactnavigation.org/)**
--   **[React Native Maps](https://github.com/react-native-community/react-native-maps)**
--   **[Expo Constants](https://docs.expo.io/versions/latest/sdk/constants/)**
--   **[React Native SVG](https://github.com/react-native-community/react-native-svg)**
--   **[Axios](https://github.com/axios/axios)**
--   **[Expo Location](https://docs.expo.io/versions/latest/sdk/location/)**
--   **[Expo Mail Composer](https://docs.expo.io/versions/latest/sdk/mail-composer/)**
-
-> Veja o arquivo  [package.json](https://github.com/tgmarinho/README-ecoleta/blob/master/mobile/package.json)
-
-#### [](https://github.com/tgmarinho/Ecoleta#utilit%C3%A1rios)**Utilitários**
-
--   Protótipo:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Ecoleta)](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta)**
--   API:  **[IBGE API](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1)**  →  **[API de UFs](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-UFs-estadosGet)**,  **[API de Municípios](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet)**
--   Maps:  **[Leaflet](https://react-leaflet.js.org/en/)**
--   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**  → Extensions:  **[SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)**
--   Markdown:  **[StackEdit](https://stackedit.io/)**,  **[Markdown Emoji](https://gist.github.com/rxaviers/7360908)**
--   Commit Conventional:  **[Commitlint](https://github.com/conventional-changelog/commitlint)**
--   Teste de API:  **[Insomnia](https://insomnia.rest/)**
--   Ícones:  **[Feather Icons](https://feathericons.com/)**,  **[Font Awesome](https://fontawesome.com/)**
--   Fontes:  **[Ubuntu](https://fonts.google.com/specimen/Ubuntu)**,  **[Roboto](https://fonts.google.com/specimen/Roboto)**
-
 
 ---
 
