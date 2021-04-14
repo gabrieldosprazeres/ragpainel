@@ -32,8 +32,8 @@
  <a href="#-funcionalidades">Funcionalidades</a> •
  <a href="#-layout">Layout</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-requisitos-minimos">Requisitos Mínimos</a> • 
- <a href="#-instalacao-windows">Instalação no Windows</a> • 
+ <a href="#-warning-requisitos-mínimos">Requisitos Mínimos</a> • 
+ <a href="#-large_blue_circle-instalação-no-windows">Instalação no Windows</a> • 
  <a href="#-contribuidores">Contribuidores</a> • 
  <a href="#-autor">Autor</a> •
  <a href="#user-content--licença">Licença</a>
@@ -198,7 +198,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 # Clone este projeto
 $ git clone https://github.com/rscodexx/ragpainel.git
 
-# Ou baixe o projeto direto do repositório: https://github.com/rscodexx/ragpainel/archive/refs/heads/master.zip
+# Ou baixe o projeto direto do repositório: https://github.com/rscodexx/ragpainel
 
 # Crie um novo banco de dados e importe o arquivo ragnarok.sql que está em:
 $ ragpainel\database\seeders\sql-files
