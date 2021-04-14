@@ -6469,6 +6469,23 @@ h2.title {
     color: #FFFFFF;
 }
 
+.btn.btn-purple, .btn.btn-purple:hover, .btn.btn-purple:focus, .btn.btn-purple:active, .btn.btn-purple.active, .btn.btn-purple:active:focus, .btn.btn-purple:active:hover, .btn.btn-purple.active:focus, .btn.btn-purple.active:hover, .open > .btn.btn-purple.dropdown-toggle, .open > .btn.btn-purple.dropdown-toggle:focus, .open > .btn.btn-purple.dropdown-toggle:hover,
+.navbar .navbar-nav > li > a.btn.btn-purple,
+.navbar .navbar-nav > li > a.btn.btn-purple:hover,
+.navbar .navbar-nav > li > a.btn.btn-purple:focus,
+.navbar .navbar-nav > li > a.btn.btn-purple:active,
+.navbar .navbar-nav > li > a.btn.btn-purple.active,
+.navbar .navbar-nav > li > a.btn.btn-purple:active:focus,
+.navbar .navbar-nav > li > a.btn.btn-purple:active:hover,
+.navbar .navbar-nav > li > a.btn.btn-purple.active:focus,
+.navbar .navbar-nav > li > a.btn.btn-purple.active:hover, .open >
+.navbar .navbar-nav > li > a.btn.btn-purple.dropdown-toggle, .open >
+.navbar .navbar-nav > li > a.btn.btn-purple.dropdown-toggle:focus, .open >
+.navbar .navbar-nav > li > a.btn.btn-purple.dropdown-toggle:hover {
+    background-color: #9c27b0;
+    color: #FFFFFF;
+}
+
 .btn.btn-rose:focus, .btn.btn-rose:active, .btn.btn-rose:hover,
 .navbar .navbar-nav > li > a.btn.btn-rose:focus,
 .navbar .navbar-nav > li > a.btn.btn-rose:active,
