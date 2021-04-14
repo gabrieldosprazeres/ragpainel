@@ -1,10 +1,10 @@
 
 <p align="center">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/rscodexx/devsbook">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/rscodexx/ragpainel">
 
   <a href="https://github.com/rscode/devsbook/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rscodexx/devsbook">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rscodexx/ragpainel">
   </a>
 
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
@@ -22,12 +22,9 @@
   
  
 </p>
-<h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/banner.png" />
-</h1>
 
 <h4 align="center"> 
-	🚧  Ecoleta ♻️ Concluído 🚀 🚧
+	RagPainel 🚀
 </h4>
 
 <p align="center">
@@ -44,31 +41,28 @@
 
 ## 💻 Sobre o projeto
 
-♻️ Ecoleta - é uma forma de conectar empresas e entidades de coleta de resíduos orgânicos e inorgânicos as pessoas que precisam descartar seus resíduos de maneira ecológica.
-
-
-Projeto desenvolvido durante a **NLW - Next Level Week** oferecida pela [Rocketseat](https://blog.rocketseat.com.br/primeira-next-level-week/).
-O NLW é uma experiência online com muito conteúdo prático, desafios e hacks onde o conteúdo fica disponível durante uma semana.
+RagPainel - É um painel de controle desenvolvido para gerenciar contas e personagens de ragnarok online.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- [x] Empresas ou entidades podem se cadastrar na plataforma web enviando:
-  - [x] uma imagem do ponto de coleta
-  - [x] nome da entidade, email e whatsapp
-  - [x] e o endereço para que ele possa aparecer no mapa
-  - [x] além de selecionar um ou mais ítens de coleta: 
-    - lâmpadas
-    - pilhas e baterias
-    - papéis e papelão
-    - resíduos eletrônicos
-    - resíduos orgânicos
-    - óleo de cozinha
+- [x] Geral
+  - [x] Visualizar jogadores online.
+  - [x] Visualizar total de contas.
+  - [x] Visualizar total de personagens.
+  - [x] Visualizar total de clãns.
+  - [x] Top 3 jogadores de (PVP, WOE e MVP).
 
-- [x] Os usuários tem acesso ao aplicativo móvel, onde podem:
-  - [x] navegar pelo mapa para ver as instituições cadastradas
-  - [x] entrar em contato com a entidade através do E-mail ou do WhatsApp
+- [x] Usuário
+  - [x] Criar conta
+  - [x] Registrar conta
+  - [x] Alterar dados da conta(foto, senha, e-mail e deta de nascimento).
+  - [x] Visualizar quantidade de acessos.
+  - [x] Visualizar data e hora do último acesso.
+  - [x] Visualizar último ip acessado.
+  - [x] Visualizar quantidade de dias vip.
+  - [x] Visualizar quantidade de créditos. 
 
 ---
 
