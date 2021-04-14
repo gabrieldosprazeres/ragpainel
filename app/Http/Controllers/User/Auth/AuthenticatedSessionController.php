@@ -54,7 +54,7 @@ class AuthenticatedSessionController extends Controller
         $id = User::where('userid', $request->input('userid'))->where('user_pass', $request->input('password'))->first();
 
         if(is_null($id)){
-            return back()->with('custom_alert', 'Está conta não exite.');
+            return back()->with('custom_alert', 'Essa conta não existe.');
         }
 
         if($id->state > 0){
