@@ -3,7 +3,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/rscodexx/ragpainel">
 
-  <a href="https://github.com/rscode/devsbook/commits/master">
+  <a href="https://github.com/rscode/ragpainel/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rscodexx/ragpainel">
   </a>
 
@@ -62,7 +62,60 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
   - [x] Visualizar data e hora do último acesso.
   - [x] Visualizar último ip acessado.
   - [x] Visualizar quantidade de dias vip.
-  - [x] Visualizar quantidade de créditos. 
+  - [x] Visualizar quantidade de créditos.
+  - [ ] Esqueceu sua senha
+  - [ ] Esqueceu seu login
+
+- [x] Administrador
+  - [x] Visualizar Logs
+  - [x] Gerenciar Créditos
+       - [x] Adicionar
+       - [x] Remover
+       - [x] Consultar
+  - [x] Gerenciar Vip
+       - [x] Adicionar
+       - [x] Remover
+       - [x] Consultar
+  - [x] Gerenciar Equipe
+       - [x] Adicionar
+       - [x] Remover
+       - [x] Consultar
+  - [x] Gerenciar Banimentos
+       - [x] Adicionar
+       - [x] Remover
+       - [x] Consultar
+  - [x] Gerenciar Tickets
+       - [x] Visualizar
+       - [x] Fechar
+       - [x] Responder
+  - [x] Configurações do Painel
+       - [x] Nome do Painel
+       - [x] Nome Mini
+       - [x] Email
+       - [x] Discord
+       - [x] Facebook
+       - [x] Definir cor do painel
+            - [x] Roxo
+            - [x] Verde
+            - [x] Azul
+            - [x] Amarelo
+            - [x] Vermelho
+            - [x] Rosa
+
+- [x] Rankings
+  - [x] WOE
+  - [x] MVPs
+  - [x] Zenys
+  - [x] PVP
+  - [x] Eventos
+
+- [x] Database
+  - [x] Visualizar Itens
+  - [x] Visualizar Monstros
+
+- [x] Suporte
+  - [x] Criar Ticket
+  - [x] Visualizar Tickets
 
 ---
 
