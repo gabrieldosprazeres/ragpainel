@@ -157,16 +157,16 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
 
 ## :warning: Requisitos Mínimos
 
-    :heavy_check_mark: PHP na versão 7.3 ou superior<br>
-    :heavy_check_mark: BCMath PHP Extensão ativa<br>
-    :heavy_check_mark: Ctype PHP Extensão ativa<br>
-    :heavy_check_mark: Fileinfo PHP Extensão ativa<br>
-    :heavy_check_mark: JSON PHP Extensão ativa<br>
-    :heavy_check_mark: Mbstring PHP Extensão ativa<br>
-    :heavy_check_mark: OpenSSL PHP Extensão ativa<br>
-    :heavy_check_mark: PDO PHP Extensão ativa<br>
-    :heavy_check_mark: Tokenizer PHP Extensão ativa<br>
-    :heavy_check_mark: XML PHP Extensão ativa<br>
+:heavy_check_mark: PHP na versão 7.3 ou superior<br>
+:heavy_check_mark: BCMath PHP Extensão ativa<br>
+:heavy_check_mark: Ctype PHP Extensão ativa<br>
+:heavy_check_mark: Fileinfo PHP Extensão ativa<br>
+:heavy_check_mark: JSON PHP Extensão ativa<br>
+:heavy_check_mark: Mbstring PHP Extensão ativa<br>
+:heavy_check_mark: OpenSSL PHP Extensão ativa<br>
+:heavy_check_mark: PDO PHP Extensão ativa<br>
+:heavy_check_mark: Tokenizer PHP Extensão ativa<br>
+:heavy_check_mark: XML PHP Extensão ativa<br>
 
 💡Tanto o Frontend quanto o Mobile precisam que o Backend esteja sendo executado para funcionar.
 
