@@ -101,6 +101,16 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
             - [x] Amarelo
             - [x] Vermelho
             - [x] Rosa
+       - [x] Definir cor de fundo
+            - [x] Preto
+            - [x] Branco
+       - [x] Definir level do jogador vip
+       - [x] Definir level do administrador
+       - [x] Definir level do game master
+       - [x] Definir level do comunnity manager
+       - [x] Configurações de Tickets
+            - [x] Adicionar Categoria
+            - [x] Remover Categoria
 
 - [x] Rankings
   - [x] WOE
@@ -116,6 +126,10 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
 - [x] Suporte
   - [x] Criar Ticket
   - [x] Visualizar Tickets
+
+- [ ] Doações
+  - [ ] Fazer Doação
+  - [ ] Consultar Doações
 
 ---
 
