@@ -82,7 +82,7 @@ class ConfigController extends Controller
     {
 
         $validator = Validator::make($request->only('levelvip'), [
-            'levelvip' => 'required|min:2|numeric',
+            'levelvip' => 'required|max:99|numeric',
         ]);
 
         if ($validator->fails()) {
@@ -94,5 +94,31 @@ class ConfigController extends Controller
         Config::where('name', 'levelvip')->update(['content' => $request->input('levelvip')]);
 
         return back()->with('custom_alert_success', 'Configuração atualizada com sucesso.');
+    }
+
+    public function saveStaff(Request $request)
+    {
+        $date = $request->only(['leveladm', 'levelgm', 'levelcm']);
+
+        $validator = Validator::make($date, [
+            'leveladm' => 'required|max:99|numeric',
+            'levelgm' => 'required|max:99|numeric',
+            'levelcm' => 'required|max:99|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/configs')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        foreach ($date as $item => $value){
+
+            Config::where('name', $item)->update(['content' => $value]);
+        }
+
+        return back()->with('custom_alert_success', 'Configurações atualizadas com sucesso.');
+
+
     }
 }

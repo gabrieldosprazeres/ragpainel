@@ -81,7 +81,7 @@
                         <p>Início</p>
                     </a>
                 </li>
-                @if($level == 99)
+                @if($level == $configs['leveladm'])
                 <li class="{{ (request()->is('admin/*')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#pagesExamples">
                         <i class="material-icons">security</i>

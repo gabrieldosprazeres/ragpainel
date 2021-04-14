@@ -103,3 +103,4 @@ Route::post('/admin/configs/savegeneral',[ConfigController::class, 'saveGeneral'
 Route::post('/admin/configs/savecolor',[ConfigController::class, 'saveColor'])->middleware('auth', 'admin')->name('admin.config.savecolor');
 Route::post('/admin/configs/savecolorbg',[ConfigController::class, 'saveColorBg'])->middleware('auth', 'admin')->name('admin.config.savecolorbg');
 Route::post('/admin/configs/savevip',[ConfigController::class, 'saveVip'])->middleware('auth', 'admin')->name('admin.config.savevip');
+Route::post('/admin/configs/savestaff',[ConfigController::class, 'saveStaff'])->middleware('auth', 'admin')->name('admin.config.savestaff');

@@ -192,25 +192,26 @@
                     <div class="card-content">
                         <h4 class="card-title">Configurações Equipe
                         </h4>
-                        <form>
+                        <form method="post" action="{{route('admin.config.savestaff')}}">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label">Level do Administrador</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="leveladm" value="{{$configs['leveladm']}}" class="form-control" maxlength="2" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label">Level do Game Master</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="levelgm" value="{{$configs['levelgm']}}" class="form-control" maxlength="2" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label">Level do Comunity Manager</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="levelcm" value="{{$configs['levelcm']}}" class="form-control" maxlength="2" required>
                                         </div>
                                     </div>
                                 </div>

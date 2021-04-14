@@ -63,7 +63,7 @@
                         <img class="img" src="{{asset('assets/img/users')}}/{{$photo}}" />
                 </div>
                 <div class="card-content">
-                    <h6 class="category text-gray">@if($level == 0) Jogador Normal @elseif($level == 1) Jogador VIP @elseif($level == 10) Community Manager @elseif($level == 20) Game Master @elseif($level >= 50) Administrador @endif</h6>
+                    <h6 class="category text-gray">@if($level == 0) Jogador Normal @elseif($level == $configs['levelvip']) Jogador VIP @elseif($level == $configs['levelcm']) Community Manager @elseif($level == $configs['levelgm']) Game Master @elseif($level == $configs['leveladm']) Administrador @endif</h6>
                     <h4 class="card-title">{{ucfirst(trans($user))}}</h4>
                     <form action="{{route('user.myaccount.upload')}}" method="post" enctype="multipart/form-data">
                         @csrf
