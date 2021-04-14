@@ -29,11 +29,11 @@
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
  <a href="#-layout">Layout</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-warning-requisitos-mínimos">Requisitos Mínimos</a> • 
- <a href="#-large_blue_circle-instalação-no-windows">Instalação no Windows</a> • 
+ <a href="#warning-requisitos-mínimos">Requisitos Mínimos</a> • 
+ <a href="#large_blue_circle-instalação-no-windows">Instalação no Windows</a> • 
  <a href="#-contribuidores">Contribuidores</a> • 
  <a href="#-autor">Autor</a> •
  <a href="#user-content--licença">Licença</a>
@@ -276,8 +276,6 @@ $http://localhost/ragpainel/public
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
 Feito com ❤️ por Rafael Santos 👋🏽 [Entre em contato!](https://www.rscode.com.br)
-
----
 
 ---
 
