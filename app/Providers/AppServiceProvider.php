@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
 use App\Models\Config;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,11 +28,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $configs = [];
 
-        $dbconfigs = Config::all();
+        if(Schema::hasTable('painel_configs')){
+            $dbconfigs = Config::all();
 
-        foreach ($dbconfigs as $dbconfig){
-            $configs [ $dbconfig['name'] ] = $dbconfig['content'];
+            foreach ($dbconfigs as $dbconfig){
+                $configs [ $dbconfig['name'] ] = $dbconfig['content'];
+            }
+           
         }
+     
         View()->share('configs', $configs);
     }
 }
