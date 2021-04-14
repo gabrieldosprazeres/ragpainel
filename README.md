@@ -138,17 +138,19 @@ RagPainel - É um painel de controle desenvolvido para gerenciar contas e person
 ### Celular
 
 <p align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/home-mobile.png" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/mobile/01.jpg" width="200px">
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/detalhes-mobile.svg" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/mobile/02.jpg" width="200px">
+  
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/mobile/03.jpg" width="200px">
 </p>
 
 ### Aplicativos Desktop
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/web.svg" width="400px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/desktop/01.png" width="400px">
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/sucesso-web.svg" width="400px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./public/examples/desktop/02.gif" width="400px">
 </p>
 
 ---
