@@ -11731,6 +11731,10 @@ footer .btn {
     color: #00bcd4;
 }
 
+.color-purple th {
+    color: #9c27b0;
+}
+
 .tablecenter td, th {
     text-align: center;
 }

@@ -26,7 +26,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="pill1">
 
-                                <div class="material-datatables tablecenter">
+                                <div class="material-datatables tablecenter color-{{$configs['color']}}">
                                     <table id="tickets" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                         <tr>
@@ -51,7 +51,7 @@
                                                     <td>{{date('d-m-Y', strtotime($open->updated_at))}} às {{date('H:m:i', strtotime($open->updated_at))}}</td>
                                                     <td>
                                                         <form method="get" action="{{route('admin.managertickets.view', ['id' => $open->id])}}">
-                                                            <button type="submit" class="btn btn-success btn-xs">Visualizar</button>
+                                                            <button type="submit" class="btn btn-{{$configs['color']}} btn-xs">Visualizar</button>
                                                             <button type="submit" class="btn btn-danger btn-xs" formaction="{{route('admin.managertickets.close', ['id' => $open->id])}}">Fechar</button>
                                                         </form>
                                                     </td>
@@ -67,7 +67,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="pill1">
 
-                                        <div class="material-datatables tablecenter">
+                                        <div class="material-datatables tablecenter color-{{$configs['color']}}">
                                             <table id="tickets2" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                                 <thead>
                                                 <tr>
@@ -92,7 +92,7 @@
                                                         <td>{{date('d-m-Y', strtotime($att->updated_at))}} às {{date('H:m:i', strtotime($att->updated_at))}}</td>
                                                         <td>
                                                             <form method="get" action="{{route('admin.managertickets.view', ['id' => $att->id])}}">
-                                                                <button type="submit" class="btn btn-success btn-xs">Visualizar</button>
+                                                                <button type="submit" class="btn btn-{{$configs['color']}} btn-xs">Visualizar</button>
                                                                 <button type="submit" class="btn btn-danger btn-xs" formaction="{{route('admin.managertickets.close', ['id' => $att->id])}}">Fechar</button>
                                                             </form>
                                                         </td>
@@ -109,7 +109,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="pill1">
 
-                                        <div class="material-datatables tablecenter">
+                                        <div class="material-datatables tablecenter color-{{$configs['color']}}">
                                             <table id="tickets3" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                                 <thead>
                                                 <tr>
@@ -134,7 +134,7 @@
                                                         <td>{{date('d-m-Y', strtotime($close->updated_at))}} às {{date('H:m:i', strtotime($close->updated_at))}}</td>
                                                         <td>
                                                             <form method="get" action="{{route('admin.managertickets.view', ['id' => $close->id])}}">
-                                                                <button type="submit" class="btn btn-success btn-xs">Visualizar</button>
+                                                                <button type="submit" class="btn btn-{{$configs['color']}} btn-xs">Visualizar</button>
                                                                 <button type="submit" class="btn btn-info btn-xs" formaction="{{route('admin.managertickets.open', ['id' => $close->id])}}">Abrir</button>
                                                             </form>
                                                         </td>

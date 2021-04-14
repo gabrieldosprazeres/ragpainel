@@ -79,7 +79,7 @@
                 <h4 class="card-title">TOP PVP</h4>
                 <p class="category">Os 3 melhores jogadores do pvp.</p>
             </div>
-            <div class="card-content table-responsive tablecenter">
+            <div class="card-content table-responsive tablecenter color-{{$configs['color']}}">
                 <table class="table table-hover">
                     <thead class="text-warning">
                     <th>Posição</th>
@@ -109,7 +109,7 @@
                 <h4 class="card-title">TOP WOE</h4>
                 <p class="category">Os 3 melhores jogadores da woe.</p>
             </div>
-            <div class="card-content table-responsive tablecenter">
+            <div class="card-content table-responsive tablecenter color-{{$configs['color']}}">
                 <table class="table table-hover">
                     <thead class="text-warning">
                     <th>Posição</th>
@@ -137,7 +137,7 @@
                 <h4 class="card-title">TOP MVP</h4>
                 <p class="category">Os 3 melhores jogadores.</p>
             </div>
-            <div class="card-content table-responsive tablecenter">
+            <div class="card-content table-responsive tablecenter color-{{$configs['color']}}">
                 <table class="table table-hover">
                     <thead class="text-warning">
                     <th>Posição</th>
