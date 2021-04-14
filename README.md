@@ -243,7 +243,7 @@ $http://localhost/ragpainel/public
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/FranciscoWallisonr"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/19413241?v=4" width="100px;" alt=""/><br /><sub><b>Francisco Wallison</b></sub></a><br /><a href="https://github.com/FranciscoWallison" title="Francisco Wallison">👨‍🚀</a></td>
+    <td align="center"><a href="https://github.com/FranciscoWallison"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/19413241?v=4" width="100px;" alt=""/><br /><sub><b>Francisco Wallison</b></sub></a><br /><a href="https://github.com/FranciscoWallison" title="Francisco Wallison">👨‍🚀</a></td>
   </tr>
 </table>
 
