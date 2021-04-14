@@ -24,20 +24,20 @@
 
 <body>
 <div class="wrapper">
-    <div class="sidebar" data-active-color="purple" data-background-color="black" data-image="{{asset('assets/img/menu/poster_1.jpg')}}">
+    <div class="sidebar" data-active-color="{{$configs['color']}}" data-background-color="{{$configs['colorbg']}}" data-image="{{asset('assets/img/menu/poster_1.jpg')}}">
         <!--
     Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
     Tip 2: you can also add an image using data-image tag
     Tip 3: you can change the color of the sidebar with data-background-color="white | black"
 -->
         <div class="logo">
-            <a href="http://www.creative-tim.com/" class="simple-text">
-                RS CODE
+            <a href="#" class="simple-text">
+                {{$configs['title']}}
             </a>
         </div>
         <div class="logo logo-mini">
-            <a href="http://www.creative-tim.com/" class="simple-text">
-                RS
+            <a href="#" class="simple-text">
+                {{$configs['title_mini']}}
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -109,6 +109,9 @@
                             <li class="{{ (request()->is('admin/managertickets')) ? 'active' : '' }}">
                                 <a href="{{route('admin.managertickets')}}">Gerenciar Tickets</a>
                             </li>
+                            <li class="{{ (request()->is('admin/configs')) ? 'active' : '' }}">
+                                <a href="{{route('admin.config')}}">Configurações do Painel</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -176,12 +179,6 @@
                         </ul>
                     </div>
                 </li>
-                <li {{ (request()->is('configs')) ? 'active' : '' }}>
-                    <a href="dashboard.html">
-                        <i class="material-icons">settings</i>
-                        <p>Configurações</p>
-                    </a>
-                </li>
 
                 <li>
                     <a data-toggle="collapse" href="#mapsExamples">
@@ -193,13 +190,13 @@
                     <div class="collapse" id="mapsExamples">
                         <ul class="nav">
                             <li>
-                                <a href="maps/google.html">Email</a>
+                                <a href="mailto:{{$configs['email']}}" target="_blank">Email</a>
                             </li>
                             <li>
-                                <a href="maps/fullscreen.html">Discord</a>
+                                <a href="{{$configs['discord']}}" target="_blank">Discord</a>
                             </li>
                             <li>
-                                <a href="maps/vector.html">Facebook</a>
+                                <a href="{{$configs['facebook']}}" target="_blank">Facebook</a>
                             </li>
                         </ul>
                     </div>

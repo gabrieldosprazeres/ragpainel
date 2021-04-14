@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\Auth\RegisteredUserController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\User\Auth\AuthenticatedSessionController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\User\MyAccount;
 use App\Http\Controllers\User\MyChars;
 use App\Http\Controllers\Admin\LogsController;
@@ -20,6 +19,7 @@ use App\Http\Controllers\Rankings\EventController;
 use App\Http\Controllers\Database\DatabaseController;
 use App\Http\Controllers\Tickets\TicketsController;
 use App\Http\Controllers\Admin\ManagerTicketController;
+use App\Http\Controllers\Admin\ConfigController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +97,8 @@ Route::get('/admin/managertickets/view/{id}', [ManagerTicketController::class, '
 Route::match(['post', 'get'], '/admin/managertickets/close/{id}',[ManagerTicketController::class, 'close'])->middleware('auth', 'admin')->name('admin.managertickets.close');
 Route::match(['post', 'get'], '/admin/managertickets/open/{id}',[ManagerTicketController::class, 'open'])->middleware('auth', 'admin')->name('admin.managertickets.open');
 Route::post('/admin/managertickets/reply', [ManagerTicketController::class, 'reply'])->middleware('auth', 'admin')->name('admin.managertickets.reply');
+// Configurações do Painel
+Route::get('/admin/configs',[ConfigController::class, 'index'])->middleware('auth', 'admin')->name('admin.config');
+Route::post('/admin/savegeneral',[ConfigController::class, 'saveGeneral'])->middleware('auth', 'admin')->name('admin.config.savegeneral');
+Route::post('/admin/savecolor',[ConfigController::class, 'saveColor'])->middleware('auth', 'admin')->name('admin.config.savecolor');
+Route::post('/admin/savecolorbg',[ConfigController::class, 'saveColorBg'])->middleware('auth', 'admin')->name('admin.config.savecolorbg');

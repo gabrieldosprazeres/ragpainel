@@ -12,6 +12,7 @@ use App\Models\Char;
 use App\Models\Guild;
 use App\Models\RankingPVP;
 use App\Models\RankingGVG;
+use App\Http\Controllers\Admin\ConfigController;
 
 class IndexController extends Controller
 {
