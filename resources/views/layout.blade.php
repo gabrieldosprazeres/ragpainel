@@ -78,7 +78,7 @@
                 <li class="{{ (request()->is('/')) ? 'active' : '' }}">
                     <a href="{{route('index')}}">
                         <i class="material-icons">home</i>
-                        <p>Home</p>
+                        <p>Início</p>
                     </a>
                 </li>
                 @if($level == $configs['leveladm'])
