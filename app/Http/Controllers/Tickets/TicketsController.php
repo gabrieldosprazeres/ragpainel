@@ -84,11 +84,14 @@ class TicketsController extends Controller
         $ticket = new Ticket;
         $ticket->title = $request->title;
         $ticket->login = $request->user()->userid;
+        
         $ticket->email = $request->user()->email;
+       
         $ticket->body = nl2br($request->body);
         $ticket->category = $request->category;
+       
         $ticket->save();
-
+        
         return back()->with('custom_alert_success', 'Ticket enviado com sucesso.');
     }
 

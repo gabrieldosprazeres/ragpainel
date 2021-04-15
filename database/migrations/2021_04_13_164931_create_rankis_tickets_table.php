@@ -13,6 +13,20 @@ class CreateRankisTicketsTable extends Migration
      */
     public function up()
     {
+        
+        //TODO add files main
+        // DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/main.sql"));
+
+        // DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/item_db.sql"));
+
+        // DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/mob_db.sql"));
+
+        // DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/mob_db.sql"));
+
+        // DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/pt_br_translate_item_db.sql"));
+
+        // DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/pt_br_translate_mob_db.sql"));
+
         DB::unprepared(file_get_contents(database_path()."/seeders/sql-files/ragnarok.sql"));
     }
 
