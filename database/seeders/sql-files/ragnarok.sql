@@ -32,7 +32,7 @@ CREATE TABLE `tickets` (
 `id` int(11) NOT NULL,
 `title` varchar(24) NOT NULL,
 `login` varchar(24) NOT NULL,
-`email` varchar(24) NOT NULL,
+`email` varchar(39) NOT NULL default '',
 `category` varchar(24) NOT NULL,
 `body` text NOT NULL,
 `tickets` varchar(24) NOT NULL DEFAULT 'Aberto',
